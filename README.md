@@ -9,3 +9,4 @@ Project for Course "Webprogrammierung"
 - index.html: the Homepage for the Restaurant Project
   - To start the Page -> take the full Path of the index.html and put it into a Browser
 - the Webpages are connected to the Homepage via Hyperlinks
+- Zip Ordner entpacken

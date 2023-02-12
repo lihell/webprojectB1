@@ -4,33 +4,29 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="ressources/Hibiscus.png">
+        <link rel="stylesheet" href="CSS/HomePage.css">
         <title>Hibiscus</title>
     </head>
     <body>
-        <div>
-            <h1>Hibiscus</h1>
-            <img src="ressources/restaurant.jpg" width="20%" height="15%" alt="Restaurant">
-        </div>
-        <br>
-        <hr>
-        <p>Das Thema für dieses Web Projekt ist eine Restaurant Seite. Zu dieser Restaurant Seite : </p>
-        <hr>
-        <div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="HTML/Menu.html">Menu</a></li>
-                    <li><a href="HTML/About_me.html">About</a></li>
-                    <li><a href="HTML/Reservations.html">Reservations</a></li>
-                </ul>
-            </nav>
-        </div>
-        <br>
-        <div>
-            <h2><u>Herzlich Willkommen bei unserem Restaurant</u></h2>
-            <p><b>Dein <u> kulinarisches Abenteuer</u> wartet auf dich. <br>
-            Mitten im Herzen von Berlin, nahe des Kurfürstendamms liegt das Familiengeführte Restaurant Hibiscus</b>
-                <span>
+        <div id="layout">
+                <nav id="navigation">
+                    <ul>
+                        <li><a href="HomePage.html">Home</a></li>
+                        <li><a href="HTML/Menu.html">Menu</a></li>
+                        <li><a href="HTML/About_me.html">About</a></li>
+                        <li><a href="HTML/Reservations.html">Reservations</a></li>
+                    </ul>
+                </nav>
+            <div id="header">
+                <h1>Hibiscus</h1>
+                <!--                <img src="ressources/restaurant.jpg" width="20%" height="15%" alt="Restaurant"> //-->
+            </div>
+            <div>
+                <h2><u>Herzlich Willkommen bei unserem Restaurant</u></h2>
+                <p><b>Dein <u> kulinarisches Abenteuer</u> wartet auf dich. <br>
+                    Mitten im Herzen von Berlin, nahe des Kurfürstendamms liegt das Familiengeführte Restaurant Hibiscus</b>
+                    <span>
                     <br>
                     <br>
                     Ein Restaurant zum Wohlfühlen, eine Bar zum Entspannen und immer etwas Neues, damit es nicht langweilig wird. So könnte man das Hibiscus in einem Satz beschreiben.
@@ -38,11 +34,11 @@
                 Bei uns erwartet Sie eine ehrliche Küche mit Pfiff. Unsere jahreszeitlich wechselnde Speisenkarte bietet Spezialitäten der klassischen Küche, beliebte Fischgerichte und frisch über dem Feuer gegrillte Steaks. <br> Und auf unserer Tageskarte präsentieren wir saisonale Spezialitäten und Angebote des Marktes.</span></p>
                 </span>
 
-            <br>
-            <h2>Öffnungszeiten</h2>
-            <br>
-            <table border="3" cellspacing="10" cellpadding="10">
-                <thead>
+                <br>
+                <h2>Öffnungszeiten</h2>
+                <br>
+                <table border="3" cellspacing="10" cellpadding="10">
+                    <thead>
                     <tr>
                         <th>Montag</th>
                         <th>Dienstag</th>
@@ -52,8 +48,8 @@
                         <th>Samstag</th>
                         <th>Sonntag</th>
                     </tr>
-                </thead>
-                <tbody>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td>09:30 - 22:00</td>
                         <td>09:30 - 22:00</td>
@@ -63,11 +59,10 @@
                         <td>10:00 - 20:30</td>
                         <td>Geschlossen</td>
                     </tr>
-                </tbody>
-            </table>
-            <br>
-        </div>
-        <br>
+                    </tbody>
+                </table>
+                <br>
+            </div>
         <div>
             <h2>Nächste Veranstaltungen</h2>
             <p>Die nächsten <i>Veranstaltungen</i> welche für dieses Restaurant geplant sind. <br>
@@ -75,40 +70,41 @@
             <br>
             <table border="3" cellspacing="10" cellpadding="10">
                 <thead>
-                    <tr>
-                        <th>Januar, 2023</th>
-                        <th>Februar, 2023</th>
-                        <th>März, 2023</th>
-                        <th>April, 2023</th>
-                        <th>Mai, 2023</th>
-                    </tr>
+                <tr>
+                    <th>Januar, 2023</th>
+                    <th>Februar, 2023</th>
+                    <th>März, 2023</th>
+                    <th>April, 2023</th>
+                    <th>Mai, 2023</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><b>28 Jan <br> Spanischer Gambas Abend</b> <br> -- beginnt 17.00 Uhr --</td>
-                        <td><b>14 Feb <br> Valentinstag</b> <br> -- beginnt 7.00 Uhr -- </td>
-                        <td><b>05 Mrz <br> Italienischer Sonntag</b> <br> -- beginnt 21.00 Uhr --</td>
-                        <td><b>07 Apr <br> Osterwochenende</b> <br> -- beginnt 07.04 - 10.04 --</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td><b>21 Feb <br> Tiroler Gasthaus Woche</b> <br> -- beginnt 21.02 - 01.03 --</td>
-                        <td><b>11 Mrz <br> Quiz mit Biss <br></b> -- beginnt 23.00 Uhr -- </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><b>21 Mrz <br> Asiatisches Barbeque</b> <br> -- beginnt 22.00 Uhr --</td>
-                    </tr>
+                <tr>
+                    <td><b>28 Jan <br> Spanischer Gambas Abend</b> <br> -- beginnt 17.00 Uhr --</td>
+                    <td><b>14 Feb <br> Valentinstag</b> <br> -- beginnt 7.00 Uhr -- </td>
+                    <td><b>05 Mrz <br> Italienischer Sonntag</b> <br> -- beginnt 21.00 Uhr --</td>
+                    <td><b>07 Apr <br> Osterwochenende</b> <br> -- beginnt 07.04 - 10.04 --</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>21 Feb <br> Tiroler Gasthaus Woche</b> <br> -- beginnt 21.02 - 01.03 --</td>
+                    <td><b>11 Mrz <br> Quiz mit Biss <br></b> -- beginnt 23.00 Uhr -- </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><b>21 Mrz <br> Asiatisches Barbeque</b> <br> -- beginnt 22.00 Uhr --</td>
+                </tr>
                 </tbody>
             </table>
+        </div>
         </div>
     </body>
     <br>
     <br>
     <hr>
-    <footer>
+    <footer id="footer">
         <div>
             <h2>Adresse</h2>
             <p><b>Name:</b> Hibiscus <br>

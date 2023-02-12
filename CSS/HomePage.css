@@ -1,7 +1,7 @@
 #layoutHomePage {
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 4% 30% 30% 30% 10%;
+    grid-template-rows: 4% 30% 40% 30% 10%;
 }
 
 body {
@@ -31,7 +31,6 @@ body {
     background: linear-gradient(rgba(120, 93, 115,.7), rgba(130, 100, 100,.7)), url(https://digital.ihg.com/is/image/ihg/crowne-plaza-amsterdam-7059109412-2x1);
 }
 
-
 #iconHibiscusTitle {
     opacity: 0.7;
     position: relative;
@@ -50,11 +49,25 @@ body {
 #content1Grid {
     grid-column: 1 / 3;
     grid-row: 3 / 3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 #content2Grid {
     grid-column: 1 / 3;
     grid-row: 4 / 4;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 #imgNextWelcome {
@@ -97,17 +110,33 @@ body {
 #openingTitle {
     display: flex;
     position: relative;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    width: 70%;
+    padding-bottom: 5%;
     align-content: center;
     justify-content: center;
     align-items: center;
     top: 10%;
-    font-size: 200%;
+    font-size: 142%;
+    border-top: #272727 dotted 2px;
+    border-bottom: #272727 dotted 2px;
+}
+
+.openingTableRow {
+    margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    border-bottom: #272727 dotted 2px;
 }
 
 #tableOpening {
     position: relative;
+    width: 41%;
 }
 
 #footer {

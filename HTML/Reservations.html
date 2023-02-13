@@ -1,150 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="ressources/Hibiscus.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/Reservations.css">
     <title>Reservierungen</title>
 </head>
 <body>
-    <div style="color:blue;">
+<div id="layoutReservation">
+    <div id="headerReservation">
         <h1>Reservierungen</h1>
         <p>
-            Unsere astreine Marketingkampagne hat sie um den Finger gewickelt? <span style="color:red;">Kein Problem!</span>  Im folgenden können sie schnell und einfach eine Reservierung machen.
+            Unsere astreine Marketingkampagne hat sie um den Finger gewickelt?
+            <span style="color: red">Kein Problem!</span> Im folgenden können sie
+            schnell und einfach eine Reservierung machen.
         </p>
     </div>
-    </body>
-    <img src="../ressources/restaurant.png" height=200 width=350>
-    <div>
-        <h2>Was können sie bei uns erwarten?</h2>
-        <h3>Unser wundervolles Steak</h3>
-        <p>
-            Hier folgt ein Text über Steak von Wikipedia. <br>
-            Ein Steak (englisch steak [steik], aus altnordisch steik, „Braten“, zu steikja „am Spieß braten“; vgl. neuisländisch steik „Steak“ oder „Braten“; steikja, „braten“) 
-            ist eine zum Kurzbraten oder Grillen geeignete Rindfleischscheibe. Steaks, die von anderen Tier- und Fleischarten stammen, tragen einen entsprechenden Hinweis in 
-            ihrer Bezeichnung (z. B. Kalbssteak, Schweinesteak, Putensteak, Hirschsteak usw.).[1][2] <br>Auch quer zur Wirbelsäule geschnittene Scheiben von größeren, 
-            festfleischigen Fischen wie Schwertfisch, Thunfisch, Hai oder Lachs werden als Steaks bezeichnet.
-            <br>
-            <br>
-            <br>
-        </p>
+    <div id="pictureRestaurantReservation">
+        <div id="divPicReservation">
+            <img id="reservationsPicRestaurant" src="../ressources/restaurant.png" height="200" width="350" />
+            <h2 id="textToPicReservation">Was können sie bei uns erwarten?</h2>
+        </div>
+        <div>
+            <h3>Unser wundervolles Steak</h3>
+            <p>
+                Hier folgt ein Text über Steak von Wikipedia. <br />
+                Ein Steak (englisch steak [steik], aus altnordisch steik, „Braten“, zu
+                steikja „am Spieß braten“; vgl. neuisländisch steik „Steak“ oder
+                „Braten“; steikja, „braten“) ist eine zum Kurzbraten oder Grillen
+                geeignete Rindfleischscheibe. Steaks, die von anderen Tier- und
+                Fleischarten stammen, tragen einen entsprechenden Hinweis in ihrer
+                Bezeichnung (z. B. Kalbssteak, Schweinesteak, Putensteak, Hirschsteak
+                usw.).[1][2] <br />Auch quer zur Wirbelsäule geschnittene Scheiben von
+                größeren, festfleischigen Fischen wie Schwertfisch, Thunfisch, Hai oder
+                Lachs werden als Steaks bezeichnet.
+                <br />
+                <br />
+                <br />
+            </p>
+        </div>
     </div>
-    <div>
+    <div id="infoForReservation">
         <h2>Reservieren</h2>
         <p>
-            Gern könnt ihr Kontakt über vollgendes Formular aufnehmen. Denkt an eine freundliche Anschrift wie <u>Hallo</u>  oder <u>Hi</u>. <br><br>
-            Gebt einfach eure Daten ein damit wir sie verkaufen könne an Google, Meta und co.  
+            Gern könnt ihr Kontakt über vollgendes Formular aufnehmen. Denkt an
+            eine freundliche Anschrift wie <u>Hallo</u> oder <u>Hi</u>.
+            <br /><br />
+            Gebt einfach eure Daten ein damit wir sie verkaufen könne an Google,
+            Meta und co.
         </p>
-        <br>
-        <br>
-        <form action="#">
+        <br />
+        <br />
+        <div style="display: grid">
             <p>
+                <br />
+                <br />
+                <label for="Vorname"
+                >Vorname: <input type="text" name="Vorname"
+                /></label>
+                <label for="Nachname"
+                >Nachname: <input type="text" name="Nachname"
+                /></label>
+                <br />
+                <br />
+                <label>
+                    Geben Sie Ihr Geburtsdatum ein:
+                    <input type="date" id="gebdat" />
+                </label>
+                <br />
+                <br />
+                <label>
+                    Wann wollen sie essen gehen?
+                    <input type="date" id="eatdat" />
+                </label>
+                <br />
+                <br />
+                <label>
+                    Für wie viele Menschen wollen sie reservieren?
+                    <input type="search" list="Anzahl Personen" />
+                    <datalist id="Anzahl Personen">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="3"></option>
+                        <option value="4"></option>
+                        <option value="5"></option>
+                        <option value="6"></option>
+                        <option value="7"></option>
+                        <option value="8"></option>
+                        <option value="9"></option>
+                        <option value="10"></option>
+                    </datalist>
+                </label>
 
-            <br>
-            <br>
-            <label for="Vorname">Vorname: <input type="text" name="Vorname"></label>
-            <label for="Nachname">Nachname: <input type="text" name="Nachname"></label>
-            <br>
-            <br>
-            <label>
-                Geben Sie Ihr Geburtsdatum ein: 
-                <input type="date" id="gebdat">
-            </label>
-            <br>
-            <br>
-            <label>
-                Wann wollen sie essen gehen? 
-                <input type="date" id="eatdat">
-            </label>
-            <br>
-            <br>
-            <label>
-                Für wie viele Menschen wollen sie reservieren?
-                <input type="search" list="Anzahl Personen">
-                <datalist id="Anzahl Personen">
-                <option value="1"> 
-                <option value="2"> 
-                <option value="3"> 
-                <option value="4"> 
-                <option value="5"> 
-                <option value="6"> 
-                <option value="7">
-                <option value="8"> 
-                <option value="9"> 
-                <option value="10"> 
-                </datalist> 
-            </label>
-            
-            <br>
-            <br>
-            <!--
-            <p><label for="Motivation">Wie sehr haben sie Bock bei uns zu essen:</label></p>
-            <textarea id="Motivationsschreiben" name="Motivationsschreiben" rows="4" cols="50">Erzählen sie uns, wie sehr sie bei uns essen wollen genau hier?</textarea>
-            -->
-            <label for="Wie viel Gänge wollen sie Essen?">Wie viel Gänge wollen sie Essen? <input type="text" name="Gänge"></label>
-            <br>
-            <br>
-            <input type="checkbox" id="hunger" name="hunger" value="Hunger">
-                <label for="hunger"> Ich habe hunger</label><br>
-                <input type="checkbox" id="durst" name="durst" value="Durst">
-                <label for="durst"> Ich habe durst</label><br>
-                <input type="checkbox" id="geld" name="geld" value="Geld">
-                <label for="geld"> Ich habe Geld</label><br>
-            <button>Senden</button>
+                <br />
+                <br />
+                <!--
+                <p><label for="Motivation">Wie sehr haben sie Bock bei uns zu essen:</label></p>
+                <textarea id="Motivationsschreiben" name="Motivationsschreiben" rows="4" cols="50">Erzählen sie uns, wie sehr sie bei uns essen wollen genau hier?</textarea>
+                -->
+                <label for="Wie viel Gänge wollen sie Essen?"
+                >Wie viel Gänge wollen sie Essen? <input type="text" name="Gänge"
+                /></label>
+                <br />
+                <br />
+                <input type="checkbox" id="hunger" name="hunger" value="Hunger" />
+                <label for="hunger"> Ich habe hunger</label><br />
+                <input type="checkbox" id="durst" name="durst" value="Durst" />
+                <label for="durst"> Ich habe durst</label><br />
+                <input type="checkbox" id="geld" name="geld" value="Geld" />
+                <label for="geld"> Ich habe Geld</label><br />
+                <button>Senden</button>
             </p>
-        </form>
-    </div> 
-    <div style="background-color:grey;">
-        Folgende Termine sind schon vergeben:
-
-        <table border="1">
-            <tr>
-                <th>Termin</th>
-                <th>Name</th>
-            </tr>
-            <tr>
-                <td>2023-02-09</td>
-                <td>Luis Winter</td>
-            </tr>
-            <tr>
-                <td>2023-05-01</td>
-                <td>Genoveva Bergmann</td> 
-            </tr>
-            <tr>
-                <td>2023-05-26</td>
-                <td>Toni Graf</td>
-            </tr>
-            <tr>
-                <td>2023-07-21</td>
-                <td>Agnes Arnold</td>
-            </tr>
-            <tr>
-                <td>2023-11-22</td>
-                <td>Käthe Arnold</td>
-            </tr>
-            <tr>
-                <td>2023-01-28</td>
-                <td>Lilli Schulze</td>
-            </tr>
-            <tr>
-                <td>2023-05-16</td>
-                <td>Markus Fuchs</td>
-            </tr>
-            <tr>
-                <td>2023-07-05</td>
-                <td>Daniel Schulz</td>
-            </tr>
-        </table>
-        <br>
-        <br>
-        Wir freuen uns auf Sie!
-    
+        </div>
     </div>
-    <a href="../index.html"> Zurück</a>
-    
-
+    <div id="alreadyReservation" style="display: flex; flex-direction: column">
+        Folgende Termine sind schon vergeben:
+        <div>
+            <table border="1">
+                <tr>
+                    <th>Termin</th>
+                    <th>Name</th>
+                </tr>
+                <tr>
+                    <td>2023-02-09</td>
+                    <td>Luis Winter</td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>Genoveva Bergmann</td>
+                </tr>
+                <tr>
+                    <td>2023-05-26</td>
+                    <td>Toni Graf</td>
+                </tr>
+                <tr>
+                    <td>2023-07-21</td>
+                    <td>Agnes Arnold</td>
+                </tr>
+                <tr>
+                    <td>2023-11-22</td>
+                    <td>Käthe Arnold</td>
+                </tr>
+                <tr>
+                    <td>2023-01-28</td>
+                    <td>Lilli Schulze</td>
+                </tr>
+                <tr>
+                    <td>2023-05-16</td>
+                    <td>Markus Fuchs</td>
+                </tr>
+                <tr>
+                    <td>2023-07-05</td>
+                    <td>Daniel Schulz</td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        <br />
+        Wir freuen uns auf Sie!
+    </div>
+</div>
+<a href="../index.html"> Zurück</a>
 </body>
 </html>

@@ -7,13 +7,11 @@ body {
 
 #layoutReservation {
     display: grid;
-    grid-template-rows: 10% 50% 30%;
+    grid-template-rows: 50% 50%;
     grid-template-columns: 50% 50%;
 }
 
 #headerReservation {
-    grid-column: 1 / 3;
-    grid-row: 1 / 1;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -26,8 +24,6 @@ body {
 }
 
 #pictureRestaurantReservation {
-    grid-column: 1 / 3;
-    grid-row: 2 / 2;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -48,24 +44,27 @@ body {
 }
 
 #textToPicReservation {
-    position: relative;
+    position: absolute;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    bottom: 55%;
+    bottom: 40%;
     color: #FFFFFF;
     font-size: 200%;
     text-shadow: 3px 3px 6px #272727;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #infoForReservation {
     grid-column: 1 / 2;
-    grid-row: 3 / 3;
+    grid-row: 1 / 3;
 }
 
 #alreadyReservation {
     grid-column: 2 / 3;
-    grid-row: 3 / 3;
+    grid-row: 1 / 3;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

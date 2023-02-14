@@ -35,6 +35,13 @@ body {
 #divPicReservation {
     width: 51%;
     height: 70%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 #reservationsPicRestaurant {
@@ -45,16 +52,9 @@ body {
 
 #textToPicReservation {
     position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    bottom: 40%;
+    text-shadow: 3px 3px 6px #272727;
     color: #FFFFFF;
     font-size: 200%;
-    text-shadow: 3px 3px 6px #272727;
-    align-content: center;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 #infoForReservation {

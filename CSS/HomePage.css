@@ -8,6 +8,7 @@ body {
 
 #navGrid {
     position: relative;
+    height: 6rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -67,11 +68,21 @@ body {
 #contentCelebrations {
     position: relative;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
+}
+
+.eventItem {
+    margin-right: 2%;
+    height: 200px;
+    margin-top: 2%;
+    width: 200px;
+    box-shadow: 1px 0px 17px 0px #606060;
+    border-radius: 15px;
+    border: 2px solid #272727;
 }
 
 #container {
@@ -102,6 +113,14 @@ body {
     margin-top: 5%;
     hyphens: auto;
     font-size: 145%;
+}
+
+#containerTextWelcome {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #openingTitle {
@@ -144,7 +163,7 @@ body {
     flex-wrap: wrap;
     align-content: flex-end;
     align-items: baseline;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 

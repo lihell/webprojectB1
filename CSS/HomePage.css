@@ -1,0 +1,210 @@
+#layoutHomePage {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 4% 40% 25% 20% 20% 10%;
+}
+
+body {
+    font-family: Inconsolata, sans-serif;
+    margin: 0;
+    background-image: linear-gradient(to right, #F9D976, #F39F86);
+}
+
+#navGrid {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menuButton {
+    margin-right: 5%;
+}
+
+#headerGrid {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    align-items: center;
+    background-size: cover;
+    font-size: 300%;
+    background: linear-gradient(rgba(120, 93, 115,.7), rgba(130, 100, 100,.7)), url(https://digital.ihg.com/is/image/ihg/crowne-plaza-amsterdam-7059109412-2x1);
+}
+
+#iconHibiscusTitle {
+    opacity: 0.7;
+    position: relative;
+    height: 50%;
+    margin-right: 5%;
+}
+
+#textWelcomeToHibiscus {
+    position: relative;
+    text-transform: uppercase;
+    filter: brightness(1.50);
+    color: #FFFFFF;
+    text-shadow: 3px 3px 6px #272727;
+}
+
+#contentWelcomeGrid {
+    grid-column: 1 / 3;
+    grid-row: 3 / 3;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#contentOpeningHours {
+    grid-row: 4 / 4;
+    grid-column: 1 / 3;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#contentCelebrations {
+    grid-column: 1 / 3;
+    grid-row: 5 / 5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#imgNextWelcome {
+    height: 94%;
+    border-radius: 83px;
+    margin-right: 4%;
+}
+
+#container {
+    display: flex;
+    height: 63%;
+    width: 75%;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcomeText {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#welcome {
+    font-size: 300%;
+}
+
+#firstParagraph {
+    filter: brightness(1.75);
+    text-align: justify;
+    margin-top: 5%;
+    hyphens: auto;
+    font-size: 120%;
+}
+
+#openingTitle {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+    padding-bottom: 5%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    top: 10%;
+    font-size: 142%;
+    border-top: #272727 dotted 2px;
+    border-bottom: #272727 dotted 2px;
+}
+
+.openingTableRow {
+    margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    border-bottom: #272727 dotted 2px;
+}
+
+#tableOpening {
+    position: relative;
+    width: 41%;
+}
+
+#footer {
+    grid-column: 1 / 3;
+    grid-row: 6 / 6;
+    display: flex;
+    flex-direction: row;
+    font-family: Inconsolata, sans-serif;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: baseline;
+    justify-content: center;
+}
+
+
+#navigation {
+    background-image: linear-gradient(to right, #FC575E, #F7B42C);
+    position: relative;
+    font-weight: bold;
+    font-size: 118%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+#navigation a {
+    color: #272727;
+    text-decoration: none;
+    align-content: center;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    margin-right: 3%;
+    width: 4%;
+    height: 20%;
+}
+
+#navigation a:hover {
+    border-bottom: #FFFFFF dotted 2px;
+    border-top: #FFFFFF dotted 2px;
+}

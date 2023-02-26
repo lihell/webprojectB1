@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/HomePage.css">
+    <link rel="stylesheet" href="hibiscus/src/CSS/HomePage.css">
     <link rel="icon" href="ressources/Hibiscus.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,35 +11,47 @@
 </head>
 <body>
 <div>
-    <div id="navGrid">
-        <a class="menuButton" href="index.html">Home</a>
-        <a class="menuButton" href="HTML/Menu.html">Menu</a>
-        <a class="menuButton" href="HTML/About_me.html">About</a>
-        <a class="menuButton" href="HTML/Reservations.html">Reservations</a>
-    </div>
     <div id="headerGrid">
-        <img id="iconHibiscusTitle" src="https://cdn-icons-png.flaticon.com/512/616/616779.png">
-        <h1 id="textWelcomeToHibiscus">Welcome to Hibiscus!</h1>
+        <div id="navGrid">
+            <a class="menuButton" href="index.html">Home</a>
+            <a class="menuButton" href="HTML/Menu.html">Menu</a>
+            <a class="menuButton" href="HTML/About_me.html">About</a>
+            <a class="menuButton" href="HTML/Reservations.html">Reservations</a>
+        </div>
+        <div id="headWelcome">
+            <img id="iconHibiscusTitle" src="https://cdn-icons-png.flaticon.com/512/616/616779.png">
+            <h1 id="textWelcomeToHibiscus">Welcome to Hibiscus!</h1>
+        </div>
     </div>
-        <div id="containerTextWelcome">
-            <h2 class="welcome"><u>Herzlich Willkommen <br>bei unserem Restaurant</u></h2>
-                <p class="firstParagraph"><b>Dein <u> kulinarisches Abenteuer</u> wartet auf dich. <br>
-                    Mitten im Herzen von Berlin, nahe des Kurfürstendamms liegt das Familiengeführte Restaurant Hibiscus</b>
-                    <span>
+            <div id="containerWelcomeTitle">
+                <div id="boxWelcomeTitle">
+                    <div id="welcomeTitleContent">
+                        <h2 id="welcome">Herzlich Willkommen <br>bei unserem Restaurant</h2>
+                    </div>
+                </div>
+            </div>
+            <div id="containerWelcomeText">
+                <img id="hibiscusPicWelcomeText" src="https://i.pinimg.com/originals/ba/66/c1/ba66c1f19a5807e29e99dd71335831fc.png">
+                <div id="boxWelcomeText">
+                    <div id="welcomeTextContent">
+                        <p class="firstParagraph"><b>Dein <u> kulinarisches Abenteuer</u> wartet auf dich. <br>
+                            Mitten im Herzen von Berlin, nahe des Kurfürstendamms liegt das Familiengeführte Restaurant Hibiscus</b>
+                            <span>
                             <br>
                             <br>
                             Ein Restaurant zum Wohlfühlen, eine Bar zum Entspannen und immer etwas Neues, damit es nicht langweilig wird. So könnte man das Hibiscus in einem Satz beschreiben.
                         <br>
                         Bei uns erwartet Sie eine ehrliche Küche mit Pfiff. Unsere jahreszeitlich wechselnde Speisenkarte bietet Spezialitäten der klassischen Küche, beliebte Fischgerichte und frisch über dem Feuer gegrillte Steaks. <br> Und auf unserer Tageskarte präsentieren wir saisonale Spezialitäten und Angebote des Marktes.</span></p>
-                <p class="firstParagraph">Sehr geehrter Besucher unseres Restaurants,
-
-                    wir fühlen uns geehrt, dass Sie sich für unser Restaurant Hibiscus entschieden haben. Vielen Dank für Ihren Besuch.
-
-                    Wir sind stets bemüht, Ihnen den bestmöglichen persönlichen Service zu bieten, um Ihren Besuch bei uns so angenehm wie möglich zu gestalten. Unser Erfolg kann nur von Ihnen beurteilt werden. Gerne möchten wir Sie daher bitten, sich einen Moment Zeit zu nehmen, um unser Haus in Bezug auf verschiedene Kriterien zu bewerten.</p>
-                <p class="firstParagraph">Mit freundlichen Grüßen Ihr Restaurant Team</p>
-        </div>
+                    </div>
+                </div>
+            </div>
     <div id="contentOpeningHours">
-            <h2 class="welcome">Öffnungszeiten</h2>
+        <div id="leftCirclesOpening">
+            <div id="circle2Opening"></div>
+            <div id="circle1Opening"></div>
+        </div>
+        <div id="boxOpeningHours">
+            <h2 id="openingTitle">Öffnungszeiten</h2>
             <table id="tableOpening" cellspacing="10" cellpadding="10">
                 <tr class="openingTableRow">
                     <th>Montag</th>
@@ -70,69 +82,215 @@
                     <td>Geschlossen</td>
                 </tr>
             </table>
+        </div>
+        <div>
+            <div id="circle3Opening"></div>
+            <div id="circle4Opening"></div>
+        </div>
     </div>
     <div>
-        <h2 class="welcome">Nächste Veranstaltungen</h2>
-        <p class="firstParagraph">Die nächsten <i>Veranstaltungen</i> welche für dieses Restaurant geplant sind. <br>
-            Gegen das jährliche Einerlei verwöhnen wir Sie mit verschiedensten Spezialitätenabenden und Wochen.<br> Bei themenbezogener Atmosphäre servieren wir Menüs, besondere Speisen und Getränkespezialitäten.</p>
-        <br>
+        <div id="containerVeranstaltungenTitle">
+            <div id="boxVeranstaltungenTitle">
+                <div id="veranstaltungenTitleContent">
+                    <h2 class="welcome">Nächste Veranstaltungen</h2>
+                </div>
+            </div>
+        </div>
+        <div id="containerVeranstaltungenText">
+            <div id="boxVeranstaltungenText">
+                <div id="veranstaltungenTextContent">
+                    <p class="firstParagraph">Die nächsten <i>Veranstaltungen</i> welche für dieses Restaurant geplant sind. <br>
+                        Gegen das jährliche Einerlei verwöhnen wir Sie mit verschiedensten Spezialitätenabenden und Wochen.<br> Bei themenbezogener Atmosphäre servieren wir Menüs, besondere Speisen und Getränkespezialitäten.</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="contentCelebrations">
-        <div class="eventItem">
-            <h2>Januar, 2023</h2>
-            <ol>
-                <li>Spanischer Gambas Abend</li>
-                <li>Tiroler Gasthaus Woche</li>
-            </ol>
+    <script src="JavaScript/EventBoxSlide.ts"></script>
+    <div id="containerContentCelebrations">
+        <div id="boxContentCelebrations">
+            <div class="eventSlide">
+                <div class="MonthCelebration">
+                    <h3>Januar</h3>
+                </div>
+                <div class="boxEvents">
+                    <div class="eventItem" id="winterFest">
+                        <h3>Winter-Feier</h3>
+                        <p>10.01</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                    <div class="eventItem" id="interJan">
+                        <h3>Internationaler Tag</h3>
+                        <p>10.01</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eventSlide">
+                <div class="MonthCelebration">
+                    <h3>Februar</h3>
+                </div>
+                <div class="boxEvents">
+                    <div class="eventItem" id="fasching">
+                        <h3>Fasching</h3>
+                        <p>21.02</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                    <div class="eventItem" id="interFeb">
+                        <h3>Internationaler Tag</h3>
+                        <p>10.02</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eventSlide">
+                <div class="MonthCelebration">
+                    <h3>März</h3>
+                </div>
+                <div class="boxEvents">
+                    <div class="eventItem" id="hexJagd">
+                        <h3>Hexen Jagd</h3>
+                        <p>01.03</p>
+                        <p>ab 20</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                    <div class="eventItem" id="interMär">
+                        <h3>Internationaler Tag</h3>
+                        <p>10.03</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eventSlide">
+                <div class="MonthCelebration">
+                    <h3>April</h3>
+                </div>
+                <div class="boxEvents">
+                    <div class="eventItem" id="ostern">
+                        <h3>Ostern</h3>
+                        <p>Osterwochenende</p>
+                        <p>Jeden Abend ab 17</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                    <div class="eventItem" id="interApr">
+                        <h3>Internationaler Tag</h3>
+                        <p>10.04</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eventSlide">
+                <div class="MonthCelebration">
+                    <h3>Mai</h3>
+                </div>
+                <div class="boxEvents">
+                    <div class="eventItem" id="japan">
+                        <h3>Japanische Woche</h3>
+                        <p>07.05 - 14.05</p>
+                        <p>Jeden Tag ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                    <div class="eventItem" id="interMai">
+                        <h3>Internationaler Tag</h3>
+                        <p>10.05</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eventSlide">
+                <div class="MonthCelebration">
+                    <h3>Juni</h3>
+                </div>
+                <div class="boxEvents">
+                    <div class="eventItem" id="sommer">
+                        <h3>Sommer Fest</h3>
+                        <p>20.06</p>
+                        <p>ab 15</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                    <div class="eventItem" id="interJun">
+                        <h3>Internationaler Tag</h3>
+                        <p>10.06</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eventSlide">
+                <div class="MonthCelebration">
+                    <h3>Juli</h3>
+                </div>
+                <div class="boxEvents">
+                    <div class="eventItem" id="interJul">
+                        <h5>Internationaler Tag</h5>
+                        <p>10.07</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="eventSlide">
+                <div class="MonthCelebration">
+                    <h3>August</h3>
+                </div>
+                <div class="boxEvents">
+                    <div class="eventItem" id="franz">
+                        <h3>Alles Französisch</h3>
+                        <p>22.08</p>
+                        <p>ab 21</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                    <div class="eventItem" id="interAug">
+                        <h3>Internationaler Tag</h3>
+                        <p>10.08</p>
+                        <p>ab 18</p>
+                        <div class="hibiscsuPattern">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="eventItem">
-            <h2>Februar, 2023</h2>
-            <ol>
-                <li>Valentinstag</li>
-            </ol>
-        </div>
-        <div class="eventItem">
-            <h2>März, 2023</h2>
-            <ol>
-                <li>Example</li>
-                <li>Example</li>
-            </ol>
-        </div>
-        <div class="eventItem">
-            <h2>April, 2023</h2>
-            <ol>
-                <li>Example</li>
-                <li>Example</li>
-            </ol>
-        </div>
-        <div class="eventItem">
-            <h2>Mai, 2023</h2>
-            <ol>
-                <li>Example</li>
-                <li>Example</li>
-            </ol>
-        </div>
-        <div class="eventItem">
-            <h2>Juni, 2023</h2>
-            <ol>
-                <li>Example</li>
-                <li>Example</li>
-            </ol>
-        </div>
-        <div class="eventItem">
-            <h2>Juli, 2023</h2>
-            <ol>
-                <li>Example</li>
-                <li>Example</li>
-            </ol>
-        </div>
-        <div class="eventItem">
-            <h2>August, 2023</h2>
-            <ol>
-                <li>Example</li>
-                <li>Example</li>
-            </ol>
-        </div>
+        <button  id="boxHandleSwipeRight" onclick="plusDivs(1)">
+
+        </button>
+    </div>
+    <div>
+        <button disabled>Add to favorites</button>
     </div>
     <div id="footer">
         <div>

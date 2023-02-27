@@ -1,7 +1,23 @@
 {
-  "name": "webprojectB1",
+  "name": "webprojectb1",
   "version": "1.0.0",
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "Project for Course \"Webprogrammierung\"",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lihell/webprojectB1.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/lihell/webprojectB1/issues"
+  },
+  "homepage": "https://github.com/lihell/webprojectB1#readme"
 }

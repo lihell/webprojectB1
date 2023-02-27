@@ -1,11 +1,9 @@
 /*server.js*/
+let express = require("express");
+let app = express();
 
-const http = require('http');
+app.use("/", express.static('public'))
 
-const hostname = '127.0.0.1';
-const port = 6000;
-
-const server = http.createServer(function(req, res) {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain')
-})
+var listener = app.listen(8080, function () {
+    console.log("Listening on port " + listener.address().port);
+});

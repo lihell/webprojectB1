@@ -1,21 +1,59 @@
-const express = require('express');
+const cookieParser = require("cookie-parser");
+const bodyParser = require('body-parser');
+const express = require("express");
 const app = express();
-const path = require('path');
-const router = express.Router();
-router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
-});
-router.get('/about', function(req, res) {
-    res.sendFile(path.join(__dirname + '/html/about_me.html'));
-});
-router.get('/menu', function(req, res) {
-    res.sendFile(path.join(__dirname + '/html/menu.html'));
-});
-router.get('/reservations', function(req, res) {
-    res.sendFile(path.join(__dirname + '/html/reservations.html'));
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());app.use("/public", express.static("public"));
+app.get("/", (_, res) => res.redirect("/public/"));
+
+let sessions = [];
+
+app.post("/login", (req, res) => {
+    const username = req.body.username || "";
+    const password = req.body.password || "";
+
+    // existiert der Benutzer in einer z.B. Datenbank?
+    // ist das Passwort korrekt bzw. auch so hinterlegt in der Datenbank
+
+    if (username !== "admin" || password !== "passwd") {
+        res.send("sadasdasdasdasdasdasd")
+        return;
+    }
+
+    const sessionId = Math.floor(Math.random() * 100000);
+
+    sessions.push(`${sessionId}`);
+
+    res.cookie("token", sessionId, { maxAge: 5 * 60 * 1000 });
+    res.redirect("/secure");
 });
 
-app.use(express.static(__dirname + ''));
-app.use('/', router);
-app.listen(process.env.port || 3000);
-console.log('Running at Port 3000');
+app.get("/logout", (req, res) => {
+    res.clearCookie("token");
+    // session id aus sessions löschen
+    sessions = [];
+    res.redirect("/");
+});
+
+app.all("/secure", (req, res, next) => {
+    console.log("sdasdasdasds")
+    res.header('Access-Control-Allow-Origin', '*');
+    if (req.cookies.token === undefined) {
+        console.log("sds")
+        res.redirect("/error");
+        return;
+    }
+
+    console.log(`request with session id: ${req.cookies.token}`);
+    if (!sessions.includes(req.cookies.token)) {
+        res.redirect("/error/#error");
+        return;
+    }
+
+    next();
+});
+
+app.use("/secure", express.static("secure"));
+
+app.listen(8080);

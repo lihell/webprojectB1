@@ -16,6 +16,19 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/HomePage.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            const eventItems = document.querySelectorAll('.eventItem')
+            const favouriteButton = document.querySelector('#favouriteButton')
+
+            eventItems.forEach((eventItem) => {
+                eventItem.addEventListener('click', () => {
+                    favouriteButton.disabled = !favouriteButton.disabled;
+                })
+            })
+        }
+    </script>
     <link rel="icon" href="ressources/Hibiscus.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,10 +40,10 @@
     <div id="headerGrid">
         <div id="navGrid">
             <a href="/login">LOGIN</a>
-            <a class="menuButton" href="/">Home</a>
-            <a class="menuButton" href="/menu">Menu</a>
-            <a class="menuButton" href="/about">About</a>
-            <a class="menuButton" href="/reservations">Reservations</a>
+            <a class="menuButton" href="index.html">Home</a>
+            <a class="menuButton" href="./html/menu.html">Menu</a>
+            <a class="menuButton" href="./html/about_me.html">About</a>
+            <a class="menuButton" href="./html/reservations.html">Reservations</a>
         </div>
         <div id="headWelcome">
             <img id="iconHibiscusTitle" src="https://cdn-icons-png.flaticon.com/512/616/616779.png">
@@ -303,8 +316,11 @@
 
         </button>
     </div>
+    <script>
+
+    </script>
     <div>
-        <button disabled>Add to favorites</button>
+        <button onclick="" id="favouriteButton" disabled>Add to favorites</button>
     </div>
     <div id="footer">
         <div>

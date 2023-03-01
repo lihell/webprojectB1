@@ -30,8 +30,9 @@ body {
 
 #welcomeTextContent {
     position: relative;
-    display: flex;
+    overflow: hidden;
     width: 50%;
+    height: 70%;
 }
 
 #openingTitle {
@@ -55,6 +56,8 @@ body {
 
 #hibiscusPicWelcomeText {
     position: absolute;
+    height: 65vh;
+    width: 35vw;
     left: 10%;
     top: 15%;
 }
@@ -151,8 +154,9 @@ body {
 
 #veranstaltungenTextContent {
     position: relative;
-    display: flex;
     width: 50%;
+    overflow: hidden;
+    height: 50%;
 }
 
 .menuButton {
@@ -182,6 +186,19 @@ body {
     width: 100%;
     align-items: center;
     justify-content: space-evenly;
+}
+
+#containerFavouriteButton {
+    height: 10vh;
+}
+
+#favouriteButton {
+    background-color: #EFA561;
+    border-radius: 20px;
+    position: relative;
+    left: 20%;
+    height: 35%;
+    width: 5%;
 }
 
 #iconHibiscusTitle {
@@ -275,7 +292,7 @@ body {
     text-align: justify;
     margin-top: 2%;
     hyphens: auto;
-    font-size: 145%;
+    font-size: 150%;
 }
 
 

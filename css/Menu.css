@@ -45,7 +45,51 @@ body {
     border-bottom-right-radius: 15px;
     background-color: #F0C28C;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
+}
+.commentsAndMenu{
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 90%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.boxComment {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
+}
+
+.CommentBox {
+    width: 50%;
+    border-radius: 10px;
+    margin-right: 2%;
+}
+
+.PostMeinung {
+    background-color: #EFA561;
+    transition: all 1s ease;
+    height: 50%;
+    align-self: center;
+}
+
+.PostMeinung:hover {
+    background-color: #cc7000;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+}
+
+.commentList {
+    width: 20%;
+    margin-right: 5%;
+    height: 100%;
 }
 
 #dottedWhiteMenuVorspeisen {
@@ -100,9 +144,12 @@ body {
 
 #vorspeisePic {
     position: absolute;
-    width: 550px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30vw;
     right: 10%;
-    height: 400px;
+    height: 40vh;
     top: 27%;
 }
 
@@ -142,8 +189,11 @@ body {
 
 #hauptspeisePic {
     position: absolute;
-    width: 550px;
-    height: 400px;
+    width: 30vw;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    height: 40vh;
     left: 10%;
     top: 27%;
 }
@@ -184,9 +234,12 @@ body {
 
 #nachspeisePic {
     position: absolute;
-    width: 550px;
+    width: 30vw;
     right: 10%;
-    height: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    height: 40vh;
     top: 27%;
 }
 
@@ -204,16 +257,8 @@ body {
     align-content: center;
     font-weight: 500;
     justify-content: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-family: Inconsolata, sans-serif;
-    text-transform: uppercase;
-    align-content: center;
-    font-weight: 500;
     margin-bottom: 5%;
     margin-top: 5%;
-    justify-content: center;
 }
 
 #navToMenu {

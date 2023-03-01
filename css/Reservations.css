@@ -2,28 +2,125 @@
 body {
     font-family: Inconsolata, sans-serif;
     margin: 0;
-    background: radial-gradient(#F9D976, antiquewhite);
+    background-color: #FFFAFA;
+    overflow-x: hidden;
 }
 
-#headerReservation {
+#reservationNavGrid {
+    position: relative;
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.menuButton {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #000000;
+}
+
+#reservation {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: Inconsolata, sans-serif;
+    text-transform: uppercase;
+    align-content: center;
+    font-weight: 500;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+#circle1Reservation {
+    background-color: #F0C28C;
+    border-radius: 50%;
+    height: 57px;
+    width: 57px;
+    left: 30%;
+    position: absolute;
+}
+
+#circle2Reservation {
+    background-color: #EFA561;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    top: 21%;
+    left: 21%;
+    position: absolute;
+}
+
+#circle3Reservation {
+    background-color: #F0C28C;
+    border-radius: 50%;
+    height: 57px;
+    width: 57px;
+    right: 30%;
+    position: absolute;
+}
+
+#circle4Reservation {
+    background-color: #EFA561;
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+    top: 21%;
+    right: 20%;
+    position: absolute;
+}
+
+#containerForReservationPageText {
+    width: 100vw;
+    height: 20vh;
     position: relative;
     display: flex;
+    align-items: center;
+}
+
+#boxForReservationPageText {
+    position: relative;
+    width: 10%;
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    align-content: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #F0C28C;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: width .75s ease;
+    align-items: center;
+}
+
+#textReservationPage {
+    visibility: hidden;
+    height: 65%;
+    display: flex;
+    width: 55%;
     flex-direction: column;
+    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    align-items: center;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    border: #F7B42C dotted 3px;
 }
 
 #pictureRestaurantReservation {
     position: relative;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;
+    border-top: #272727 solid 2px;
+    border-bottom: #272727 solid 2px;
 }
 
 #divPicReservation {
@@ -35,6 +132,58 @@ body {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    align-items: center;
+}
+
+#reservationShowMoreText {
+    height: 25%;
+    position: relative;
+    width: 3%;
+    margin-left: 2%;
+    background-color: #EFA561;
+    border-radius: 15px;
+    border: #000000 dashed 2.5px;
+    transition: all 1s ease;
+}
+
+#reservationShowMoreText:hover {
+    background-color: #cc7000;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+#containerReservationText {
+    width: 100vw;
+    margin-top: 5%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+#orangeBlockReservationText {
+    height: 90%;
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    align-content: center;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #F0C28C;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#orangeReservationBlockContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 80%;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -55,10 +204,37 @@ body {
 #layoutReservation {
     position: relative;
     display: flex;
+    height: 80vh;
+    width: 100vw;
     flex-direction: row;
     align-items: center;
+    background-color: #F0C28C;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+
+#containerInfoForReservation {
+    width: 40%;
+    height: 75%;
+    border: #FFFFFF dashed 2.5px;
+    display: flex;
+    border-radius: 30px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#containerAlreadyReservation {
+    width: 25%;
+    height: 60%;
+    border: #FFFFFF dashed 2.5px;
+    display: flex;
+    border-radius: 30px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 #infoForReservation {
@@ -71,4 +247,16 @@ body {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+}
+
+#reservationFooter {
+    display: flex;
+    margin-top: 5%;
+    flex-direction: row;
+    font-family: Inconsolata, sans-serif;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    background-color: #EFA561;
+    align-items: baseline;
+    justify-content: space-around;
 }

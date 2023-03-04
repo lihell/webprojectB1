@@ -15,11 +15,27 @@
 </head>
 <body>
 <div id="menuHeader">
+    <script>
+        var isFavourite;
+        function showFavourite() {
+            if (document.getElementById("starMenu").style.display === "none") {
+                document.getElementById("starMenu").style.display = "inline-block"
+                isFavourite = true;
+            } else {
+                document.getElementById("starMenu").style.display = "none"
+                isFavourite = false;
+            }
+        }
+    </script>
     <div id="menuNavGrid">
         <a class="menuButton" href="../index.html">Home</a>
         <a class="menuButton" href="menu.html">Menu</a>
         <a class="menuButton" href="./about_me.html">About</a>
         <a class="menuButton" href="./reservations.html">Reservations</a>
+        <div>
+            <button onclick="showFavourite()">Favorit</button>
+            <i id="starMenu"></i>
+        </div>
     </div>
     <div id="menu">
         <div>

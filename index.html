@@ -38,12 +38,28 @@
 <body>
 <div>
     <div id="headerGrid">
+        <script>
+            var isFavourite;
+            function showFavourite() {
+                if (document.getElementById("starHomePage").style.display === "none") {
+                    document.getElementById("starHomePage").style.display = "inline-block"
+                    isFavourite = true;
+                } else {
+                    document.getElementById("starHomePage").style.display = "none"
+                    isFavourite = false;
+                }
+            }
+        </script>
         <div id="navGrid">
             <a href="/login">LOGIN</a>
             <a class="menuButton" href="index.html">Home</a>
             <a class="menuButton" href="./html/menu.html">Menu</a>
             <a class="menuButton" href="./html/about_me.html">About</a>
             <a class="menuButton" href="./html/reservations.html">Reservations</a>
+            <div>
+                <button onclick="showFavourite()">Favorit</button>
+                <i id="starHomePage"></i>
+            </div>
         </div>
         <div id="headWelcome">
             <img id="iconHibiscusTitle" src="https://cdn-icons-png.flaticon.com/512/616/616779.png">
@@ -319,8 +335,18 @@
     <script>
 
     </script>
-    <div>
+    <div id="favourites">
         <button onclick="" id="favouriteButton" disabled>Add to favorites</button>
+        <div>
+            <h2>Favoriten</h2>
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <div class="boxComment">
+        <textarea type="text" id="homePageComment" class="CommentBox" placeholder="Meinungen für unsere HomePage"></textarea>
+        <button class="PostMeinung">Post</button>
     </div>
     <div id="footer">
         <div>

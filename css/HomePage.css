@@ -196,9 +196,62 @@ body {
     background-color: #EFA561;
     border-radius: 20px;
     position: relative;
-    left: 20%;
     height: 35%;
     width: 5%;
+}
+
+#starHomePage {
+    position: relative;
+
+    display: none;
+    width: 0;
+    height: 0;
+
+    margin-left: .9em;
+    margin-right: .9em;
+    margin-bottom: 1.2em;
+
+    border-right: .3em solid transparent;
+    border-bottom: .7em solid #FC0;
+    border-left: .3em solid transparent;
+
+    /* Controlls the size of the stars. */
+    font-size: 24px;
+}
+#starHomePage:before, #starHomePage:after {
+               content: '';
+
+               display: block;
+               width: 0;
+               height: 0;
+
+               position: absolute;
+               top: .6em;
+               left: -1em;
+
+               border-right:  1em solid transparent;
+               border-bottom: .7em  solid #FC0;
+               border-left:   1em solid transparent;
+
+               transform: rotate(-35deg);
+}
+
+#starHomePage:after {
+     transform: rotate(35deg);
+}
+
+
+.PostMeinung {
+    background-color: #EFA561;
+    transition: all 1s ease;
+    height: 50%;
+    align-self: center;
+}
+
+.PostMeinung:hover {
+    background-color: #cc7000;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
 }
 
 #iconHibiscusTitle {
@@ -256,6 +309,20 @@ body {
     justify-content: center;
     align-items: center;
     transition: 0.5s ease;
+}
+
+#favourites {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.boxComment {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10%;
 }
 
 #container {

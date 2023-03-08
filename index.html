@@ -13,6 +13,21 @@
             });
     });
 </script>
+<script>
+    function showFavourite(event) {
+        const button = event.target;
+        console.log(button.dataset.fave);
+
+        if (button.dataset.fave === "notFave") {
+            button.dataset.fave = "isFave"
+            button.src = "../ressources/faveStar.png"
+        } else {
+            button.src = "../ressources/notFaveStar.png"
+            button.dataset.fave = "notFave"
+        }
+
+    }
+</script>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/HomePage.css" />
@@ -29,7 +44,19 @@
             })
         }
     </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            comments = JSON.parse(window.localStorage.getItem("comments"));
+            for (let i = 0; i <=comments.length; i++) {
+                var li = document.createElement("li");
+                var text = document.createTextNode(comments[i]);
+                li.appendChild(text);
+                document.getElementById("commentsFromEvents").appendChild(li);
+            }
+        }
+    </script>
     <link rel="icon" href="ressources/Hibiscus.png">
+    <link rel="stylesheet" href="./css/Star.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;700&display=swap" rel="stylesheet">
@@ -38,28 +65,12 @@
 <body>
 <div>
     <div id="headerGrid">
-        <script>
-            var isFavourite;
-            function showFavourite() {
-                if (document.getElementById("starHomePage").style.display === "none") {
-                    document.getElementById("starHomePage").style.display = "inline-block"
-                    isFavourite = true;
-                } else {
-                    document.getElementById("starHomePage").style.display = "none"
-                    isFavourite = false;
-                }
-            }
-        </script>
         <div id="navGrid">
             <a href="/login">LOGIN</a>
             <a class="menuButton" href="index.html">Home</a>
             <a class="menuButton" href="./html/menu.html">Menu</a>
             <a class="menuButton" href="./html/about_me.html">About</a>
             <a class="menuButton" href="./html/reservations.html">Reservations</a>
-            <div>
-                <button onclick="showFavourite()">Favorit</button>
-                <i id="starHomePage"></i>
-            </div>
         </div>
         <div id="headWelcome">
             <img id="iconHibiscusTitle" src="https://cdn-icons-png.flaticon.com/512/616/616779.png">
@@ -161,7 +172,7 @@
                         <p>10.01</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                     <div class="eventItem" id="interJan">
@@ -169,7 +180,7 @@
                         <p>10.01</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                 </div>
@@ -184,7 +195,7 @@
                         <p>21.02</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                     <div class="eventItem" id="interFeb">
@@ -192,7 +203,7 @@
                         <p>10.02</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                 </div>
@@ -207,7 +218,7 @@
                         <p>01.03</p>
                         <p>ab 20</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                     <div class="eventItem" id="interMär">
@@ -215,7 +226,7 @@
                         <p>10.03</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                 </div>
@@ -230,7 +241,7 @@
                         <p>Osterwochenende</p>
                         <p>Jeden Abend ab 17</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                     <div class="eventItem" id="interApr">
@@ -238,7 +249,7 @@
                         <p>10.04</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                 </div>
@@ -253,7 +264,7 @@
                         <p>07.05 - 14.05</p>
                         <p>Jeden Tag ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                     <div class="eventItem" id="interMai">
@@ -261,7 +272,7 @@
                         <p>10.05</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                 </div>
@@ -276,7 +287,7 @@
                         <p>20.06</p>
                         <p>ab 15</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                     <div class="eventItem" id="interJun">
@@ -284,7 +295,7 @@
                         <p>10.06</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                 </div>
@@ -299,7 +310,7 @@
                         <p>10.07</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                 </div>
@@ -314,7 +325,7 @@
                         <p>22.08</p>
                         <p>ab 21</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                     <div class="eventItem" id="interAug">
@@ -322,7 +333,7 @@
                         <p>10.08</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
                         </div>
                     </div>
                 </div>
@@ -332,22 +343,48 @@
 
         </button>
     </div>
-    <script>
-
-    </script>
-    <div id="favourites">
-        <button onclick="" id="favouriteButton" disabled>Add to favorites</button>
-        <div>
-            <h2>Favoriten</h2>
-            <ul>
-                <li></li>
-            </ul>
-        </div>
-    </div>
     <div class="boxComment">
-        <textarea type="text" id="homePageComment" class="CommentBox" placeholder="Meinungen für unsere HomePage"></textarea>
-        <button class="PostMeinung">Post</button>
+        <textarea type="text" id="homePageComment" class="CommentBox" placeholder="Meinungen für eine Veranstaltung"></textarea>
+        <button id="PostMeinung">Post</button>
     </div>
+    <div id="homeCOmmentsShow">
+        <ul id="commentsFromEvents">
+
+        </ul>
+    </div>
+    <script>
+        var post = document.getElementById("PostMeinung");
+        let newComments = [];
+        post.addEventListener("click", function() {
+            var commentBoxValue= document.getElementById("homePageComment").value;
+            var root = document.getElementById("commentsFromEvents");
+            var alreadyThereLi = root.getElementsByTagName("li")
+            for (let i = 0; i <= alreadyThereLi.length; i++) {
+                root.removeChild(alreadyThereLi[i])
+            }
+            if ("comments" in localStorage) {
+                comments = JSON.parse(window.localStorage.getItem("comments"))
+                comments.push(commentBoxValue);
+                window.localStorage.setItem("comments", JSON.stringify(comments))
+                for (let i = 0; i <= comments.length; i++) {
+                    var li = document.createElement("li");
+                    var text = document.createTextNode(comments[i]);
+                    li.appendChild(text);
+                    document.getElementById("commentsFromEvents").appendChild(li);
+                }
+            } else {
+                newComments.push(commentBoxValue);
+                window.localStorage.setItem("comments", JSON.stringify(newComments))
+                for (let i = 0; i <= newComments.length; i++) {
+                    var newLi = document.createElement("li");
+                    var newText = document.createTextNode(newComments[i]);
+                    newLi.appendChild(newText);
+                    document.getElementById("commentsFromEvents").appendChild(newLi);
+                }
+            }
+
+        })
+    </script>
     <div id="footer">
         <div>
             <h2>Adresse</h2>

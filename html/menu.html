@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="../css/Menu.css">
+    <link rel="stylesheet" href="../css/Star.css">
     <script>
         window.onload = function () {
             var post = document.getElementById("post")
@@ -15,18 +16,6 @@
 </head>
 <body>
 <div id="menuHeader">
-    <script>
-        var isFavourite;
-        function showFavourite() {
-            if (document.getElementById("starMenu").style.display === "none") {
-                document.getElementById("starMenu").style.display = "inline-block"
-                isFavourite = true;
-            } else {
-                document.getElementById("starMenu").style.display = "none"
-                isFavourite = false;
-            }
-        }
-    </script>
     <div id="menuNavGrid">
         <a class="menuButton" href="../index.html">Home</a>
         <a class="menuButton" href="menu.html">Menu</a>
@@ -63,30 +52,52 @@
                                 <tr>
                                     <th>Gericht</th>
                                     <th>Preis in EUR</th>
+                                    <th>Favoriten</th>
                                 </tr>
                                 <tr>
                                     <td>Alfreds Futterkiste</td>
                                     <td>10,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img data-fave="notFave" class="star" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
+                                <script>
+                                    function showFavourite(event) {
+                                        const button = event.target;
+                                        console.log(button.dataset.fave);
+
+                                        if (button.dataset.fave === "notFave") {
+                                            button.dataset.fave = "isFave"
+                                            button.src = "../ressources/faveStar.png"
+                                        } else {
+                                            button.src = "../ressources/notFaveStar.png"
+                                            button.dataset.fave = "notFave"
+                                        }
+
+                                    }
+                                </script>
                                 <tr>
                                     <td>Centro comercial Moctezuma</td>
                                     <td>12,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Ernst Handel</td>
                                     <td>12,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Island Trading</td>
                                     <td>18,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Laughing Bacchus Winecellars</td>
                                     <td>15,60</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Magazzini Alimentari Riuniti</td>
                                     <td>11,90</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -103,7 +114,7 @@
                 </div>
                 <div class="boxComment">
                     <textarea type="text" id="vorspeiseComment" class="CommentBox" placeholder="Meinungen für unsere Vorspeise"></textarea>
-                    <button class="PostMeinung">Post</button>
+                    <button id="PostMeinungVorspeise">Post</button>
                 </div>
             </div>
         </div>
@@ -121,30 +132,37 @@
                                 <tr >
                                     <th>Gericht</th>
                                     <th>Preis in EUR</th>
+                                    <th>Favoriten</th>
                                 </tr>
                                 <tr >
                                     <td>Kartoffel Spinat Maultaschen</td>
                                     <td>26,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>Steinbutt-Rücken im Stück gekocht</td>
                                     <td>12,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>Krosse Vierländer Ente</td>
                                     <td>11,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>Island Trading</td>
                                     <td>22,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Knödel mit Quark aus der Wilstermarsch</td>
                                     <td>11,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>Tristan Languste</td>
                                     <td>11,00</td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>
@@ -178,22 +196,27 @@
                             <tr>
                                 <th>Gericht</th>
                                 <th>Preis in EUR</th>
+                                <th>Favoriten</th>
                             </tr>
                             <tr >
                                 <td>Schokoladen-Malheur</td>
                                 <td>13,00</td>
+                                <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                             </tr>
                             <tr>
                                 <td>Knödel mit Quark aus der Wilstermarsch</td>
                                 <td>10,00</td>
+                                <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                             </tr>
                             <tr>
                                 <td>Gries-Flammerie</td>
                                 <td>11,00</td>
+                                <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                             </tr>
                             <tr >
                                 <td>Apfel-Tarte</td>
                                 <td>9,00</td>
+                                <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                             </tr>
                             <tr >
                                 <td>

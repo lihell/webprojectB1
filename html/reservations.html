@@ -10,27 +10,11 @@
 </head>
 <body>
     <div id="headerReservation">
-        <script>
-            var isFavourite;
-            function showFavourite() {
-                if (document.getElementById("starReservation").style.display === "none") {
-                    document.getElementById("starReservation").style.display = "inline-block"
-                    isFavourite = true;
-                } else {
-                    document.getElementById("starReservation").style.display = "none"
-                    isFavourite = false;
-                }
-            }
-        </script>
         <div id="reservationNavGrid">
             <a class="menuButton" href="../index.html">Home</a>
             <a class="menuButton" href="./menu.html">Menu</a>
             <a class="menuButton" href="./about_me.html">About</a>
             <a class="menuButton" href="reservations.html">Reservations</a>
-            <div>
-                <button onclick="showFavourite()">Favorit</button>
-                <i id="starReservation"></i>
-            </div>
         </div>
         <div id="reservation">
             <div>
@@ -213,10 +197,6 @@
                 Wir freuen uns auf Sie!
             </div>
         </div>
-    </div>
-    <div class="boxComment">
-        <textarea type="text" id="reservationComment" class="CommentBox" placeholder="Meinungen für unsere Reservation"></textarea>
-        <button class="PostMeinung">Post</button>
     </div>
     <div id="reservationFooter">
         <div>

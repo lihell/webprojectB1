@@ -200,55 +200,47 @@ body {
     width: 5%;
 }
 
-#starHomePage {
-    position: relative;
 
-    display: none;
-    width: 0;
-    height: 0;
-
-    margin-left: .9em;
-    margin-right: .9em;
-    margin-bottom: 1.2em;
-
-    border-right: .3em solid transparent;
-    border-bottom: .7em solid #FC0;
-    border-left: .3em solid transparent;
-
-    /* Controlls the size of the stars. */
-    font-size: 24px;
-}
-#starHomePage:before, #starHomePage:after {
-               content: '';
-
-               display: block;
-               width: 0;
-               height: 0;
-
-               position: absolute;
-               top: .6em;
-               left: -1em;
-
-               border-right:  1em solid transparent;
-               border-bottom: .7em  solid #FC0;
-               border-left:   1em solid transparent;
-
-               transform: rotate(-35deg);
-}
-
-#starHomePage:after {
-     transform: rotate(35deg);
-}
-
-
-.PostMeinung {
+#PostMeinung {
     background-color: #EFA561;
     transition: all 1s ease;
-    height: 50%;
+    height: 40%;
+    width: 4%;
     align-self: center;
+    border-radius: 20px;
 }
 
-.PostMeinung:hover {
+#homeCOmmentsShow {
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#commentsFromEvents {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    overflow: scroll;
+    list-style: none;
+}
+
+#commentsFromEvents::-webkit-scrollbar {
+    display: none;
+}
+
+#commentsFromEvents li {
+    height: 15%;
+    padding: 2% 2% 2% 2%;
+    width: auto;
+    border-radius: 20px;
+    border: #cc7000 dashed 2px;
+    margin-right: 3%;
+}
+
+#PostMeinung:hover {
     background-color: #cc7000;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
@@ -322,7 +314,9 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 10%;
+    height: 15vh;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 #container {
@@ -490,6 +484,14 @@ body {
     transition: 0.5s ease;
 }
 
+#homePageComment {
+    width: 40%;
+    height: 80%;
+    border-radius: 20px;
+    border: #EFA561 dashed 2px;
+    margin-right: 4%;
+}
+
 #boxHandleSwipeRight:hover {
     background-color: #cc7000;
     cursor: pointer;
@@ -498,6 +500,8 @@ body {
 
 .hibiscsuPattern {
     width: 100%;
+    display: flex;
+    justify-content: center;
     opacity: 0.8;
     height: 38%;
     background-image: url(https://www.transparentpng.com/thumb/pattern/p3NBVZ-data-security-and-privacy-software-services-safe-data.png);

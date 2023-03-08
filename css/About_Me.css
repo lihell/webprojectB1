@@ -159,9 +159,8 @@ body {
 }
 
 .hPic {
-  background-size: cover;
-  width: 100%;
-  height: 100%;
+  object-fit: cover;
+  height: -webkit-fill-available;
 }
 
 #picBackward {
@@ -180,7 +179,7 @@ body {
 #boxPics {
   background-size: cover;
   overflow: hidden;
-  width: 30%;
+  width: 400px;
   height: 40%;
 }
 
@@ -224,12 +223,16 @@ body {
   border-radius: 20px;
   height: 60%;
   display: flex;
-  width: 35%;
+  width: auto;
   background-color: #efa561;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   align-items: center;
+}
+
+#boxHistoryText h2 {
+  padding: 10%;
 }
 
 #starAboutMe {

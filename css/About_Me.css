@@ -1,357 +1,422 @@
 body {
-    font-family: Inconsolata, sans-serif;
-    margin: 0;
-    background-color: #FFFAFA;
-    overflow-x: hidden;
+  font-family: Inconsolata, sans-serif;
+  margin: 0;
+  background-color: #fffafa;
+  overflow-x: hidden;
 }
 
 .menuButton {
-    text-decoration: none;
-    font-size: 1rem;
-    color: #000000;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000000;
+}
+.p {
+  padding: auto;
 }
 
 #aboutMeNavGrid {
-    position: relative;
-    width: 100%;
-    height: 6rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    justify-content: space-evenly;
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 #aboutMe {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    font-family: Inconsolata, sans-serif;
-    text-transform: uppercase;
-    align-content: center;
-    font-weight: 500;
-    justify-content: center;
-    margin-bottom: 5%;
-    margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-family: Inconsolata, sans-serif;
+  text-transform: uppercase;
+  align-content: center;
+  font-weight: 500;
+  justify-content: center;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 #aboutMeShowMoreText {
-    height: 25%;
-    position: relative;
-    width: 3%;
-    margin-left: 2%;
-    background-color: #EFA561;
-    border-radius: 15px;
-    border: #000000 dashed 2.5px;
-    transition: all 1s ease;
+  height: 25%;
+  position: relative;
+  width: 3%;
+  margin-left: 2%;
+  background-color: #efa561;
+  border-radius: 15px;
+  border: #000000 dashed 2.5px;
+  transition: all 1s ease;
 }
 
 #aboutMeShowMoreText:hover {
-    background-color: #cc7000;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  background-color: #cc7000;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 #titleAboutMe {
-    padding-bottom: 3%;
-    padding-top: 3%;
-    margin-top: 0;
-    margin-bottom: 3%;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  margin-top: 0;
+  margin-bottom: 3%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #circle2AboutMe {
-    background-color: #EFA561;
-    border-radius: 50%;
-    height: 36px;
-    width: 36px;
-    top: 21%;
-    left: 21%;
-    position: absolute;
+  background-color: #efa561;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  top: 21%;
+  left: 21%;
+  position: absolute;
 }
 
 #circle1AboutMe {
-    background-color: #F0C28C;
-    border-radius: 50%;
-    height: 57px;
-    width: 57px;
-    left: 30%;
-    position: absolute;
+  background-color: #f0c28c;
+  border-radius: 50%;
+  height: 57px;
+  width: 57px;
+  left: 30%;
+  position: absolute;
 }
 
 #circle3AboutMe {
-    background-color: #F0C28C;
-    border-radius: 50%;
-    height: 57px;
-    width: 57px;
-    right: 30%;
-    position: absolute;
+  background-color: #f0c28c;
+  border-radius: 50%;
+  height: 57px;
+  width: 57px;
+  right: 30%;
+  position: absolute;
 }
 
 #circle4AboutMe {
-    background-color: #EFA561;
-    border-radius: 50%;
-    height: 36px;
-    width: 36px;
-    top: 21%;
-    right: 20%;
-    position: absolute;
+  background-color: #efa561;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  top: 21%;
+  right: 20%;
+  position: absolute;
 }
 
 #containerForAboutMePageText {
-    width: 100vw;
-    height: 20vh;
-    position: relative;
-    display: flex;
-    align-items: center;
+  width: 100vw;
+  height: 20vh;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 #boxForAboutMePageText {
-    position: relative;
-    width: 10%;
-    height: 90%;
-    display: flex;
-    flex-direction: row;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    align-content: center;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #F0C28C;
-    flex-wrap: wrap;
-    justify-content: center;
-    transition: width .75s ease;
-    align-items: center;
+  position: relative;
+  width: 10%;
+  height: 90%;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  align-content: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #f0c28c;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition: width 0.75s ease;
+  align-items: center;
 }
 
 #textAboutMe {
-    visibility: hidden;
-    height: 65%;
-    display: flex;
-    width: 55%;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+  visibility: hidden;
+  height: 65%;
+  display: flex;
+  width: 55%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }
 
 #historyPic {
-    position: relative;
-    height: 90vh;
-    overflow: hidden;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    margin-top: 4%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    border-top: #272727 solid 2px;
-    border-bottom: #272727 solid 2px;
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  margin-top: 4%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-top: #272727 solid 2px;
+  border-bottom: #272727 solid 2px;
 }
 
 .hPic {
-    background-size: cover;
-    width: 100%;
-    height: 100%;
+  object-fit: cover;
+  height: -webkit-fill-available;
 }
 
 #picBackward {
-    margin-left: 2%;
-    background-color: #EFA561;
-    width: 50px;
-    height: 100px;
-    border-radius: 20px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s ease;
+  margin-left: 2%;
+  background-color: #efa561;
+  width: 50px;
+  height: 100px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
 }
 
 #boxPics {
-    background-size: cover;
-    overflow: hidden;
-    width: 30%;
-    height: 40%;
+  background-size: cover;
+  overflow: hidden;
+  width: 400px;
+  height: 40%;
 }
 
 #picBackward:hover {
-    background-color: #cc7000;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  background-color: #cc7000;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 #picForward {
-    margin-left: 2%;
-    background-color: #EFA561;
-    width: 50px;
-    height: 100px;
-    border-radius: 20px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s ease;
+  margin-left: 2%;
+  background-color: #efa561;
+  width: 50px;
+  height: 100px;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease;
 }
 
 #picForward:hover {
-    background-color: #cc7000;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  background-color: #cc7000;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 #containerHistoryText {
-    width: 100vw;
-    height: 20vh;
-    position: relative;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+  width: 100vw;
+  height: 20vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
 }
 
 #boxHistoryText {
-    border-radius: 20px;
-    height: 60%;
-    display: flex;
-    width: 35%;
-    background-color: #EFA561;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  border-radius: 20px;
+  height: 60%;
+  display: flex;
+  width: auto;
+  background-color: #efa561;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#boxHistoryText h2 {
+  padding: 10%;
+}
+
+#starAboutMe {
+  position: relative;
+
+  display: none;
+  width: 0;
+  height: 0;
+
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  margin-bottom: 1.2em;
+
+  border-right: 0.3em solid transparent;
+  border-bottom: 0.7em solid #fc0;
+  border-left: 0.3em solid transparent;
+
+  /* Controlls the size of the stars. */
+  font-size: 24px;
+}
+#starAboutMe:before,
+#starAboutMe:after {
+  content: "";
+
+  display: block;
+  width: 0;
+  height: 0;
+
+  position: absolute;
+  top: 0.6em;
+  left: -1em;
+
+  border-right: 1em solid transparent;
+  border-bottom: 0.7em solid #fc0;
+  border-left: 1em solid transparent;
+
+  transform: rotate(-35deg);
+}
+
+#starAboutMe:after {
+  transform: rotate(35deg);
 }
 
 #historyText {
-    position: relative;
-    display: flex;
-    width: 89%;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  display: flex;
+  width: 89%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #containerFirstIdeaContent {
-    position: relative;
-    width: 100vw;
-    height: 57vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
+  position: relative;
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
 }
 
 #boxFirstIdeaContent {
-    width: 55%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    align-content: center;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #F0C28C;
-    flex-wrap: wrap;
-    justify-content: center;
+  width: 55%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  align-content: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #f0c28c;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: justify;
+}
+#boxFirstIdeaContent p {
+  padding: 5%;
+  margin: 0;
+}
+#boxFirstIdeaContent h3 {
+  padding-left: 5%;
+  padding-top: 5%;
+  margin: 0;
 }
 
 #containerGenericCharacteristicContent {
-    position: relative;
-    width: 100vw;
-    height: 57vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-content: center;
+  position: relative;
+  width: 100vw;
+  height: 57vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: center;
 }
 
 #boxGenericCharacteristicContent {
-    width: 55%;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-    align-content: center;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    background-color: #F0C28C;
-    flex-wrap: wrap;
-    justify-content: center;
+  width: 55%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  align-content: center;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #f0c28c;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-
+#boxGenericCharacteristicContent p {
+  padding: 5%;
+  margin: 0;
+}
+#boxGenericCharacteristicContent h3 {
+  padding-left: 5%;
+  padding-top: 5%;
+  margin: 0;
+}
 .PostMeinung {
-    background-color: #EFA561;
-    transition: all 1s ease;
-    height: 50%;
-    align-self: center;
+  background-color: #efa561;
+  transition: all 1s ease;
+  height: 50%;
+  align-self: center;
 }
 
 .PostMeinung:hover {
-    background-color: #cc7000;
-    cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  background-color: #cc7000;
+  cursor: pointer;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
 }
 
 #contact {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .boxComment {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 10%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 10%;
 }
 
 #containerContact {
-    width: 100vw;
-    height: 80vh;
-    position: relative;
-    background-color: #EFA561;
-    margin-top: 3%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  background-color: #efa561;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #boxContact {
-    width: 47%;
-    height: 80%;
-    position: relative;
-    display: flex;
-    border: #FFFFFF dashed 5px;
-    border-radius: 20px;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+  width: 47%;
+  height: 80%;
+  position: relative;
+  display: flex;
+  border: #ffffff dashed 5px;
+  border-radius: 20px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
 
 #aboutMeFooter {
-    display: flex;
-    margin-top: 5%;
-    flex-direction: row;
-    font-family: Inconsolata, sans-serif;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    background-color: #EFA561;
-    align-items: baseline;
-    justify-content: space-around;
+  display: flex;
+  margin-top: 5%;
+  flex-direction: row;
+  font-family: Inconsolata, sans-serif;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  background-color: #efa561;
+  align-items: baseline;
+  justify-content: space-around;
 }

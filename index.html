@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
-    window.addEventListener('load', () => {
-        fetch('http://localhost:8080/secure') // GET-Anfrage an /api/data-Endpunkt
-            .then(response => response.json()) // Antwort in JSON umwandeln
-            .then(data => {
-                console.log('Empfangene Daten:', data); // Empfangene Daten anzeigen
-                // Fügen Sie hier Code ein, um die empfangenen Daten in die HTML-Seite einzufügen
-            })
-            .catch(error => {
-                console.error('Fehler beim Empfangen der Daten:', error); // Fehler behandeln
-            });
-    });
+            if (!(document.cookie.trim("userId") === "userId")){
+                const userId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+                document.cookie = ('userId='+ userId);
+                console.log("new user")
+            } else {
+                console.log("exists already")
+            }
 </script>
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/HomePage.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         window.onload = function () {
             const eventItems = document.querySelectorAll('.eventItem')
@@ -51,7 +46,6 @@
             }
         </script>
         <div id="navGrid">
-            <a href="/login">LOGIN</a>
             <a class="menuButton" href="index.html">Home</a>
             <a class="menuButton" href="./html/menu.html">Menu</a>
             <a class="menuButton" href="./html/about_me.html">About</a>

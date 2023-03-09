@@ -179,7 +179,7 @@ body {
 #boxPics {
   background-size: cover;
   overflow: hidden;
-  width: 400px;
+  width: 950px;
   height: 40%;
 }
 
@@ -229,6 +229,7 @@ body {
   align-content: center;
   justify-content: center;
   align-items: center;
+  padding: 0% 2%;
 }
 
 #boxHistoryText h2 {

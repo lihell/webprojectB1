@@ -12,6 +12,33 @@
             var post = document.getElementById("post")
         }
     </script>
+    <script>
+        window.onload = function () {
+            commentsVor = JSON.parse(window.localStorage.getItem("commentsVorspeise"));
+            for (let i = 0; i <=commentsVor.length; i++) {
+                var liVor = document.createElement("li");
+                var textVor = document.createTextNode(commentsVor[i]);
+                liVor.appendChild(textVor);
+                document.getElementById("vorspeiseCommentList").appendChild(liVor);
+            }
+
+            commentsHaupt = JSON.parse(window.localStorage.getItem("commentsHauptspeise"));
+            for (let i = 0; i <=commentsHaupt.length; i++) {
+                var liHaupt = document.createElement("li");
+                var textHaupt = document.createTextNode(commentsHaupt[i]);
+                liHaupt.appendChild(textHaupt);
+                document.getElementById("hauptspeiseCommentList").appendChild(liHaupt);
+            }
+
+            commentsNach = JSON.parse(window.localStorage.getItem("commentsNachspeise"));
+            for (let i = 0; i <=commentsNach.length; i++) {
+                var liNach = document.createElement("li");
+                var textNach = document.createTextNode(commentsNach[i]);
+                liNach.appendChild(textNach);
+                document.getElementById("nachspeiseCommentList").appendChild(liNach);
+            }
+        }
+    </script>
     <title>Title</title>
 </head>
 <body>
@@ -21,10 +48,6 @@
         <a class="menuButton" href="menu.html">Menu</a>
         <a class="menuButton" href="./about_me.html">About</a>
         <a class="menuButton" href="./reservations.html">Reservations</a>
-        <div>
-            <button onclick="showFavourite()">Favorit</button>
-            <i id="starMenu"></i>
-        </div>
     </div>
     <div id="menu">
         <div>
@@ -114,17 +137,49 @@
                 </div>
                 <div class="boxComment">
                     <textarea type="text" id="vorspeiseComment" class="CommentBox" placeholder="Meinungen für unsere Vorspeise"></textarea>
-                    <button id="PostMeinungVorspeise">Post</button>
+                    <button class="PostMeinung" id="PostMeinungVorspeise">Post</button>
                 </div>
+                <script>
+                    var postVor = document.getElementById("PostMeinungVorspeise");
+                    let newCommentsVor = [];
+                    postVor.addEventListener("click", function() {
+                        var commentBoxValue= document.getElementById("vorspeiseComment").value;
+                        var root = document.getElementById("vorspeiseCommentList");
+                        var alreadyThereLi = root.getElementsByTagName("li")
+                        if (alreadyThereLi.length > 0) {
+                            for (let i = 0; i <= alreadyThereLi.length; i++) {
+                                root.removeChild(alreadyThereLi[i])
+                            }
+                        }
+                        if ("commentsVorspeise" in localStorage) {
+                            comments = JSON.parse(window.localStorage.getItem("commentsVorspeise"))
+                            comments.push(commentBoxValue);
+                            window.localStorage.setItem("commentsVorspeise", JSON.stringify(comments))
+                            for (let i = 0; i <= comments.length; i++) {
+                                var li = document.createElement("li");
+                                var text = document.createTextNode(comments[i]);
+                                li.appendChild(text);
+                                document.getElementById("vorspeiseCommentList").appendChild(li);
+                            }
+                        } else {
+                            newCommentsVor.push(commentBoxValue);
+                            window.localStorage.setItem("commentsVorspeise", JSON.stringify(newCommentsVor))
+                            for (let i = 0; i <= newCommentsVor.length; i++) {
+                                var newLi = document.createElement("li");
+                                var newText = document.createTextNode(newCommentsVor[i]);
+                                newLi.appendChild(newText);
+                                document.getElementById("vorspeiseCommentList").appendChild(newLi);
+                            }
+                        }
+
+                    })
+                </script>
             </div>
         </div>
         <div id="containerHauptspeisen">
             <img id="hauptspeisePic" src="https://img1.kochrezepte.at/use/2/hauptspeisen-rezepte_2529.jpg"/>
             <div id="orangeBoxHauptspeisen">
-                <div class="commentsAndMenu">
-                    <ul id="hauptspeiseCommentList" class="commentList">
-
-                    </ul>
+                <div id="commentsAndMenuHaupt">
                     <div id="dottedWhiteMenuHauptspeisen">
                         <div id="hauptspeisenContent">
                             <h2 class="menuTitle">Hauptgerichte</h2>
@@ -176,11 +231,49 @@
                             </table>
                         </div>
                     </div>
+                    <ul id="hauptspeiseCommentList" class="commentList">
+
+                    </ul>
                 </div>
                 <div class="boxComment">
                     <textarea type="text" id="hauptspeiseComment" class="CommentBox" placeholder="Meinungen für unsere Hauptspeisen"></textarea>
-                    <button class="PostMeinung">Post</button>
+                    <button class="PostMeinung" id="PostMeinungHauptspeise">Post</button>
                 </div>
+                <script>
+                    var postHaupt = document.getElementById("PostMeinungHauptspeise");
+                    let newCommentsHaupt = [];
+                    postHaupt.addEventListener("click", function() {
+                        var commentBoxValue= document.getElementById("hauptspeiseComment").value;
+                        var root = document.getElementById("hauptspeiseCommentList");
+                        var alreadyThereLi = root.getElementsByTagName("li")
+                        if (alreadyThereLi.length > 0) {
+                            for (let i = 0; i <= alreadyThereLi.length; i++) {
+                                root.removeChild(alreadyThereLi[i])
+                            }
+                        }
+                        if ("commentsHauptspeise" in localStorage) {
+                            comments = JSON.parse(window.localStorage.getItem("commentsHauptspeise"))
+                            comments.push(commentBoxValue);
+                            window.localStorage.setItem("commentsHauptspeise", JSON.stringify(comments))
+                            for (let i = 0; i <= comments.length; i++) {
+                                var li = document.createElement("li");
+                                var text = document.createTextNode(comments[i]);
+                                li.appendChild(text);
+                                document.getElementById("hauptspeiseCommentList").appendChild(li);
+                            }
+                        } else {
+                            newCommentsHaupt.push(commentBoxValue);
+                            window.localStorage.setItem("commentsHauptspeise", JSON.stringify(newCommentsHaupt))
+                            for (let i = 0; i <= newCommentsHaupt.length; i++) {
+                                var newLi = document.createElement("li");
+                                var newText = document.createTextNode(newCommentsHaupt[i]);
+                                newLi.appendChild(newText);
+                                document.getElementById("hauptspeiseCommentList").appendChild(newLi);
+                            }
+                        }
+
+                    })
+                </script>
             </div>
         </div>
         <div id="containerNachspeisen">
@@ -232,8 +325,43 @@
                 </div>
                 <div class="boxComment">
                     <textarea type="text" id="nachspeiseComment" class="CommentBox" placeholder="Meinungen für unsere Nachspeisen"></textarea>
-                    <button class="PostMeinung">Post</button>
+                    <button class="PostMeinung" id="PostMeinungNachspeise">Post</button>
                 </div>
+                <script>
+                    var postNach = document.getElementById("PostMeinungNachspeise");
+                    let newCommentsNach = [];
+                    postNach.addEventListener("click", function() {
+                        var commentBoxValue= document.getElementById("nachspeiseComment").value;
+                        var root = document.getElementById("nachspeiseCommentList");
+                        var alreadyThereLi = root.getElementsByTagName("li")
+                        if (alreadyThereLi.length > 0) {
+                            for (let i = 0; i <= alreadyThereLi.length; i++) {
+                                root.removeChild(alreadyThereLi[i])
+                            }
+                        }
+                        if ("commentsNachspeise" in localStorage) {
+                            comments = JSON.parse(window.localStorage.getItem("commentsNachspeise"))
+                            comments.push(commentBoxValue);
+                            window.localStorage.setItem("commentsNachspeise", JSON.stringify(comments))
+                            for (let i = 0; i <= comments.length; i++) {
+                                var li = document.createElement("li");
+                                var text = document.createTextNode(comments[i]);
+                                li.appendChild(text);
+                                document.getElementById("nachspeiseCommentList").appendChild(li);
+                            }
+                        } else {
+                            newCommentsNach.push(commentBoxValue);
+                            window.localStorage.setItem("commentsNachspeise", JSON.stringify(newCommentsNach))
+                            for (let i = 0; i <= newCommentsNach.length; i++) {
+                                var newLi = document.createElement("li");
+                                var newText = document.createTextNode(newCommentsNach[i]);
+                                newLi.appendChild(newText);
+                                document.getElementById("nachspeiseCommentList").appendChild(newLi);
+                            }
+                        }
+
+                    })
+                </script>
             </div>
         </div>
         <div id="menuFooter">

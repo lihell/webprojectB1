@@ -58,7 +58,14 @@ body {
     justify-content: flex-start;
 }
 
-
+.commentsNach li {
+    height: 15%;
+    padding: 2% 2% 2% 2%;
+    width: auto;
+    border-radius: 20px;
+    border: #cc7000 dashed 2px;
+    margin-right: 3%;
+}
 
 .boxComment {
     position: relative;
@@ -91,6 +98,23 @@ body {
     width: 20%;
     margin-right: 5%;
     height: 100%;
+    overflow: scroll;
+    list-style: none;
+}
+
+.commentList li {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 10%;
+    padding: 1% 1% 1% 1%;
+    width: auto;
+    border-radius: 20px;
+    border: #cc7000 dashed 2px;
+    margin-right: 3%;
+}
+
+.commentList::-webkit-scrollbar {
+    display: none;
 }
 
 #dottedWhiteMenuVorspeisen {
@@ -103,6 +127,16 @@ body {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+}
+
+#commentsAndMenuHaupt {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    height: 90%;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 #circle1Menu {

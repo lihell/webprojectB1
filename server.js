@@ -2,6 +2,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
 const express = require("express");
 const cors = require('cors');
+const fs = require('fs');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -13,10 +14,15 @@ app.get("/", (_, res) => res.redirect("/public/"));
 let sessions = [];
 
 app.post("/fav", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
     const data = req.body;
     console.log(data);
-    // Do something with the data...
-    res.send('Data received!');
+    fs.writeFile(__dirname + "/ressources/favorites.json", JSON.stringify(data), (err) => {
+        if (err) throw err;
+        console.log('Data written to file');
+    });
+
 });
 
 app.post("/login", (req, res) => {

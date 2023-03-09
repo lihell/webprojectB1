@@ -83,6 +83,14 @@
                                     <td><button onclick="showFavourite(event)" class="faveButton"><img data-fave="notFave" class="star" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <script>
+                                    function getCookie(cookieName) {
+                                        let cookie = {};
+                                        document.cookie.split(';').forEach(function(el) {
+                                            let [key,value] = el.split('=');
+                                            cookie[key.trim()] = value;
+                                        })
+                                        return cookie[cookieName];
+                                    }
                                     function showFavourite(event) {
                                         const button = event.target;
                                         console.log(button.dataset.fave);
@@ -94,12 +102,13 @@
                                             button.src = "../ressources/notFaveStar.png"
                                             button.dataset.fave = "notFave"
                                         }
+                                        let tmp = getCookie("userId");
                                         fetch('http://localhost:8080/fav', {
                                             method: 'POST',
                                             headers: {
                                                 'Content-Type': 'application/json'
                                             },
-                                            body: JSON.stringify({ button: button, isFavNow: !(button.dataset.fave === "notFave") })
+                                            body: JSON.stringify({ userID: tmp,button: button, isFavNow: !(button.dataset.fave === "notFave") })
                                         })
                                             .then(response => response.json())
                                             .then(data => console.log(data))

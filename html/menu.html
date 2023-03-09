@@ -71,6 +71,16 @@
                                             button.src = "../ressources/notFaveStar.png"
                                             button.dataset.fave = "notFave"
                                         }
+                                        fetch('http://localhost:8080/fav', {
+                                            method: 'POST',
+                                            headers: {
+                                                'Content-Type': 'application/json'
+                                            },
+                                            body: JSON.stringify({ button: button, isFavNow: !(button.dataset.fave === "notFave") })
+                                        })
+                                            .then(response => response.json())
+                                            .then(data => console.log(data))
+                                            .catch(error => console.error(error));
 
                                     }
                                 </script>

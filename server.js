@@ -1,13 +1,23 @@
 const cookieParser = require("cookie-parser");
 const bodyParser = require('body-parser');
 const express = require("express");
+const cors = require('cors');
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
+app.use(bodyParser.json());
 app.use(cookieParser());app.use("/public", express.static("public"));
 app.get("/", (_, res) => res.redirect("/public/"));
 
 let sessions = [];
+
+app.post("/fav", (req, res) => {
+    const data = req.body;
+    console.log(data);
+    // Do something with the data...
+    res.send('Data received!');
+});
 
 app.post("/login", (req, res) => {
     const username = req.body.username || "";

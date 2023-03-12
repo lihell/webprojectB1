@@ -225,6 +225,7 @@ body {
     height: 100%;
     overflow: scroll;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 #commentsFromEvents::-webkit-scrollbar {

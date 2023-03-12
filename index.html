@@ -346,44 +346,77 @@
         </ul>
     </div>
     <script>
+        fetch('http://localhost:8000/getCommentsMain', {
+            method: 'GET',
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok')
+                }
+                return response.json()
+            })
+            .then(data => {
+                    console.log(data)
+                    data.forEach(comment => {
+                        var li = document.createElement("li");
+                        var text = document.createTextNode(comment.comment);
+                        li.appendChild(text);
+                        document.getElementById("commentsFromEvents").appendChild(li);
+                    })
+                }
+            )
+
+    </script>
+    <script>
+        function getCookie(cookieName) {
+            let cookie = {};
+            document.cookie.split(';').forEach(function(el) {
+                let [key,value] = el.split('=');
+                cookie[key.trim()] = value;
+            })
+            return cookie[cookieName];
+        }
+        let tmp = getCookie("userId");
         var post = document.getElementById("PostMeinung");
-        let newComments = [];
         post.addEventListener("click", function() {
             var commentBoxValue= document.getElementById("homePageComment").value;
             var root = document.getElementById("commentsFromEvents");
-            fetch('http://localhost:8080/commentsMain', {
-                method: 'POST',
-                body: JSON.stringify({ userID: tmp, comment: commentBoxValue})
-            })
-                .then(response => response.json())
-                .then(data => console.log(data))
             var alreadyThereLi = root.getElementsByTagName("li")
             if (alreadyThereLi.length > 0) {
-                for (let i = 0; i <= alreadyThereLi.length; i++) {
+                for (let i = alreadyThereLi.length - 1; i >= 0; i--) {
                     root.removeChild(alreadyThereLi[i])
                 }
             }
-            if ("comments" in localStorage) {
-                comments = JSON.parse(window.localStorage.getItem("comments"))
-                comments.push(commentBoxValue);
-                window.localStorage.setItem("comments", JSON.stringify(comments))
-                for (let i = 0; i <= comments.length; i++) {
-                    var li = document.createElement("li");
-                    var text = document.createTextNode(comments[i]);
-                    li.appendChild(text);
-                    document.getElementById("commentsFromEvents").appendChild(li);
-                }
-            } else {
-                newComments.push(commentBoxValue);
-                window.localStorage.setItem("comments", JSON.stringify(newComments))
-                for (let i = 0; i <= newComments.length; i++) {
-                    var newLi = document.createElement("li");
-                    var newText = document.createTextNode(newComments[i]);
-                    newLi.appendChild(newText);
-                    document.getElementById("commentsFromEvents").appendChild(newLi);
-                }
-            }
+            fetch('http://localhost:8000/postCommentsMain', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userID: tmp, comment: commentBoxValue })
+            })
+                .then(response => response.json())
+                .then(data => (console.log(data)))
+                .catch(error => console.error(error));
 
+            fetch('http://localhost:8000/getCommentsMain', {
+                method: 'GET',
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok')
+                    }
+                    return response.json()
+                })
+                .then(data => {
+                    console.log(data)
+                    data.forEach(comment => {
+                        var li = document.createElement("li");
+                        var text = document.createTextNode(comment.comment);
+                        li.appendChild(text);
+                        document.getElementById("commentsFromEvents").appendChild(li);
+                    })
+                    }
+                )
         })
     </script>
     <div id="footer">

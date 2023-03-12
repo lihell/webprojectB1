@@ -20,6 +20,49 @@ app.use((req, res, next) => {
     next();
 })
 
+app.get("/getCommentsMain", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+    fs.readFile(__dirname + '/ressources/commentsMain.json', (err, commentData) => {
+        const jsonComment = JSON.parse(commentData)
+        console.log("Get request made")
+        console.log(jsonComment)
+        res.send(jsonComment)
+    });
+})
+
+app.get("/getCommentsVorspeise", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+    fs.readFile(__dirname + '/ressources/commentsVorspeise.json', (err, commentData) => {
+        const jsonComment = JSON.parse(commentData)
+        console.log("Get request made")
+        console.log(jsonComment)
+        res.send(jsonComment)
+    });
+})
+
+app.get("/getCommentsHauptspeise", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+    fs.readFile(__dirname + '/ressources/commentsHauptspeise.json', (err, commentData) => {
+        const jsonComment = JSON.parse(commentData)
+        console.log("Get request made")
+        console.log(jsonComment)
+        res.send(jsonComment)
+    });
+})
+app.get("/getCommentsNachspeise", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+    fs.readFile(__dirname + '/ressources/commentsNachspeise.json', (err, commentData) => {
+        const jsonComment = JSON.parse(commentData)
+        console.log("Get request made")
+        console.log(jsonComment)
+        res.send(jsonComment)
+    });
+})
+
 app.post("/fav", (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header("Access-Control-Allow-Headers", "*");
@@ -29,19 +72,156 @@ app.post("/fav", (req, res) => {
         if (err) throw err;
         console.log('Data written to file');
     });
-
 });
 
-app.post("/commentsMain", (req, res) => {
+app.post("/postCommentsMain", (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header("Access-Control-Allow-Headers", "*");
-    const data = req.body;
-    console.log(data);
-    fs.writeFile(__dirname + "/ressources/commentsMain.json", JSON.stringify(data), (err) => {
-        if (err) throw err;
-        console.log('Data written to file');
-    });
 
+    // Read the existing data from the file
+    fs.readFile(__dirname + "/ressources/commentsMain.json", (err, fileData) => {
+        if (err) throw err;
+
+        // Parse the JSON data into a JavaScript object
+        const existingData = JSON.parse(fileData);
+
+        console.log(existingData)
+
+        console.log(req.body)
+
+        // Merge the existing data with the new data received in the request
+        const newData = [...existingData, req.body];
+
+        console.log(newData)
+
+        // Write the updated data back to the file
+        fs.writeFile(__dirname + "/ressources/commentsMain.json", JSON.stringify(newData), (err) => {
+            if (err) throw err;
+            console.log('Data written to file');
+        });
+    });
+});
+
+app.post("/postCommentsVorspeise", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+
+    // Read the existing data from the file
+    fs.readFile(__dirname + "/ressources/commentsVorspeise.json", (err, fileData) => {
+        if (err) throw err;
+        console.log("im going into the post request")
+        // Parse the JSON data into a JavaScript object
+        const existingData = JSON.parse(fileData);
+
+        console.log(existingData)
+
+        console.log(req.body)
+
+        // Merge the existing data with the new data received in the request
+        const newData = [...existingData, req.body];
+
+        console.log(newData)
+
+        // Write the updated data back to the file
+        fs.writeFile(__dirname + "/ressources/commentsVorspeise.json", JSON.stringify(newData), (err) => {
+            if (err) throw err;
+            console.log('Data written to file');
+        });
+    });
+});
+
+app.post("/postCommentsHauptspeise", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+
+    // Read the existing data from the file
+    fs.readFile(__dirname + "/ressources/commentsHauptspeise.json", (err, fileData) => {
+        if (err) throw err;
+
+        // Parse the JSON data into a JavaScript object
+        const existingData = JSON.parse(fileData);
+
+        console.log(existingData)
+
+        console.log(req.body)
+
+        // Merge the existing data with the new data received in the request
+        const newData = [...existingData, req.body];
+
+        console.log(newData)
+
+        // Write the updated data back to the file
+        fs.writeFile(__dirname + "/ressources/commentsHauptspeise.json", JSON.stringify(newData), (err) => {
+            if (err) throw err;
+            console.log('Data written to file');
+        });
+    });
+});
+
+app.post("/postCommentsNachspeise", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+
+    // Read the existing data from the file
+    fs.readFile(__dirname + "/ressources/commentsNachspeise.json", (err, fileData) => {
+        if (err) throw err;
+
+        // Parse the JSON data into a JavaScript object
+        const existingData = JSON.parse(fileData);
+
+        console.log(existingData)
+
+        console.log(req.body)
+
+        // Merge the existing data with the new data received in the request
+        const newData = [...existingData, req.body];
+
+        console.log(newData)
+
+        // Write the updated data back to the file
+        fs.writeFile(__dirname + "/ressources/commentsNachspeise.json", JSON.stringify(newData), (err) => {
+            if (err) throw err;
+            console.log('Data written to file');
+        });
+    });
+});
+
+app.get("/getReservations", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+    fs.readFile(__dirname + '/ressources/reservations.json', (err, reservationData) => {
+        const jsonComment = JSON.parse(reservationData)
+        console.log("Get request made")
+        console.log(jsonComment)
+        res.send(jsonComment)
+    });
+})
+
+app.post("/postReservation", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+
+    fs.readFile(__dirname + "/ressources/reservations.json", (err, reservationData) => {
+        if (err) throw err;
+
+        // Parse the JSON data into a JavaScript object
+        const existingData = JSON.parse(reservationData);
+
+        console.log(existingData)
+
+        console.log(req.body)
+
+        // Merge the existing data with the new data received in the request
+        const newData = [...existingData, req.body];
+
+        console.log(newData)
+
+        // Write the updated data back to the file
+        fs.writeFile(__dirname + "/ressources/reservations.json", JSON.stringify(newData), (err) => {
+            if (err) throw err;
+            console.log('Data written to file');
+        });
+    })
 })
 
 app.post("/login", (req, res) => {
@@ -91,4 +271,5 @@ app.all("/secure", (req, res, next) => {
 
 app.use("/secure", express.static("secure"));
 
-app.listen(8080);
+app.listen(8000);
+console.log('Running at Port 8000');

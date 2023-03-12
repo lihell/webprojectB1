@@ -13,6 +13,13 @@ app.get("/", (_, res) => res.redirect("/public/"));
 
 let sessions = [];
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+})
+
 app.post("/fav", (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header("Access-Control-Allow-Headers", "*");
@@ -24,6 +31,18 @@ app.post("/fav", (req, res) => {
     });
 
 });
+
+app.post("/commentsMain", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+    const data = req.body;
+    console.log(data);
+    fs.writeFile(__dirname + "/ressources/commentsMain.json", JSON.stringify(data), (err) => {
+        if (err) throw err;
+        console.log('Data written to file');
+    });
+
+})
 
 app.post("/login", (req, res) => {
     const username = req.body.username || "";

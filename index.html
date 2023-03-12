@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
-            if (!(document.cookie.trim("userId") === "userId")){
-                const userId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-                document.cookie = ('userId='+ userId);
-                console.log("new user")
-            } else {
-                console.log("exists already")
+    const sessionCookie = getCookie('userId')
+    if(!sessionCookie) {
+        const userId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        document.cookie = ('userId='+ userId +'Expires=$');
+        console.log("new user")
+    }
+
+    function getCookie(name) {
+        const cookies = document.cookie.split(';');
+        for (const cookie of cookies) {
+            const [cookieName, cookieValue] = cookie.split('=');
+            if (cookieName.trim() === name) {
+                return cookieValue.trim();
             }
+        }
+        return null;
+    }
 </script>
 <script>
     function showFavourite(event) {
@@ -37,17 +47,6 @@
                     favouriteButton.disabled = !favouriteButton.disabled;
                 })
             })
-        }
-    </script>
-    <script type="text/javascript">
-        window.onload = function () {
-            comments = JSON.parse(window.localStorage.getItem("comments"));
-            for (let i = 0; i <=comments.length; i++) {
-                var li = document.createElement("li");
-                var text = document.createTextNode(comments[i]);
-                li.appendChild(text);
-                document.getElementById("commentsFromEvents").appendChild(li);
-            }
         }
     </script>
     <link rel="icon" href="ressources/Hibiscus.png">
@@ -352,9 +351,17 @@
         post.addEventListener("click", function() {
             var commentBoxValue= document.getElementById("homePageComment").value;
             var root = document.getElementById("commentsFromEvents");
+            fetch('http://localhost:8080/commentsMain', {
+                method: 'POST',
+                body: JSON.stringify({ userID: tmp, comment: commentBoxValue})
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
             var alreadyThereLi = root.getElementsByTagName("li")
-            for (let i = 0; i <= alreadyThereLi.length; i++) {
-                root.removeChild(alreadyThereLi[i])
+            if (alreadyThereLi.length > 0) {
+                for (let i = 0; i <= alreadyThereLi.length; i++) {
+                    root.removeChild(alreadyThereLi[i])
+                }
             }
             if ("comments" in localStorage) {
                 comments = JSON.parse(window.localStorage.getItem("comments"))

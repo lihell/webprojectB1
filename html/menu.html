@@ -608,7 +608,7 @@
                 //document.getElementById("fav1").dataset.fave = data
                 data.forEach(object => {
                     const button = document.getElementById(object.buttonID);
-                    if (tmp === object.userID) {
+                    if (tmp === object.userID && button) {
 
                         if (object.isFavNow) {
                             button.dataset.fave = "isFave"

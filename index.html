@@ -2,10 +2,9 @@
 <html lang="en">
 <script>
     const sessionCookie = getCookie('userId')
-    if(!sessionCookie) {
+    if (!sessionCookie) {
         const userId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        document.cookie = ('userId='+ userId +'Expires=$');
-        console.log("new user")
+        document.cookie = ('userId=' + userId + 'Expires=$');
     }
 
     function getCookie(name) {
@@ -22,7 +21,6 @@
 <script>
     function showFavourite(event) {
         const button = event.target;
-        console.log(button.dataset.fave);
 
         if (button.dataset.fave === "notFave") {
             button.dataset.fave = "isFave"
@@ -36,7 +34,7 @@
 </script>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/HomePage.css" />
+    <link rel="stylesheet" type="text/css" href="css/HomePage.css"/>
     <script type="text/javascript">
         window.onload = function () {
             const eventItems = document.querySelectorAll('.eventItem')
@@ -70,33 +68,35 @@
             <h1 id="textWelcomeToHibiscus">Welcome to Hibiscus!</h1>
         </div>
     </div>
-            <div id="containerWelcomeTitle">
-                <div id="boxWelcomeTitle">
-                    <div id="welcomeTitleContent">
-                        <h2 id="welcome">Herzlich Willkommen <br>bei unserem Restaurant</h2>
-                    </div>
-                </div>
-                <div id="boxMostVisited">
-                    <h2>Meist besuchte Seiten</h2>
-                    <ol id="listOfMostVisited">
-                    </ol>
-                </div>
+    <div id="containerWelcomeTitle">
+        <div id="boxWelcomeTitle">
+            <div id="welcomeTitleContent">
+                <h2 id="welcome">Herzlich Willkommen <br>bei unserem Restaurant</h2>
             </div>
-            <div id="containerWelcomeText">
-                <img id="hibiscusPicWelcomeText" src="https://i.pinimg.com/originals/ba/66/c1/ba66c1f19a5807e29e99dd71335831fc.png">
-                <div id="boxWelcomeText">
-                    <div id="welcomeTextContent">
-                        <p class="firstParagraph"><b>Dein <u> kulinarisches Abenteuer</u> wartet auf dich. <br>
-                            Mitten im Herzen von Berlin, nahe des Kurfürstendamms liegt das Familiengeführte Restaurant Hibiscus</b>
-                            <span>
+        </div>
+        <div id="boxMostVisited">
+            <h2>Meist besuchte Seiten</h2>
+            <ol id="listOfMostVisited">
+            </ol>
+        </div>
+    </div>
+    <div id="containerWelcomeText">
+        <img id="hibiscusPicWelcomeText"
+             src="https://i.pinimg.com/originals/ba/66/c1/ba66c1f19a5807e29e99dd71335831fc.png">
+        <div id="boxWelcomeText">
+            <div id="welcomeTextContent">
+                <p class="firstParagraph"><b>Dein <u> kulinarisches Abenteuer</u> wartet auf dich. <br>
+                    Mitten im Herzen von Berlin, nahe des Kurfürstendamms liegt das Familiengeführte Restaurant Hibiscus</b>
+                    <span>
                             <br>
                             <br>
                             Ein Restaurant zum Wohlfühlen, eine Bar zum Entspannen und immer etwas Neues, damit es nicht langweilig wird. So könnte man das Hibiscus in einem Satz beschreiben.
                         <br>
-                        Bei uns erwartet Sie eine ehrliche Küche mit Pfiff. Unsere jahreszeitlich wechselnde Speisenkarte bietet Spezialitäten der klassischen Küche, beliebte Fischgerichte und frisch über dem Feuer gegrillte Steaks. <br> Und auf unserer Tageskarte präsentieren wir saisonale Spezialitäten und Angebote des Marktes.</span></p>
-                    </div>
-                </div>
+                        Bei uns erwartet Sie eine ehrliche Küche mit Pfiff. Unsere jahreszeitlich wechselnde Speisenkarte bietet Spezialitäten der klassischen Küche, beliebte Fischgerichte und frisch über dem Feuer gegrillte Steaks. <br> Und auf unserer Tageskarte präsentieren wir saisonale Spezialitäten und Angebote des Marktes.</span>
+                </p>
             </div>
+        </div>
+    </div>
     <div id="contentOpeningHours">
         <div id="leftCirclesOpening">
             <div id="circle2Opening"></div>
@@ -151,8 +151,11 @@
         <div id="containerVeranstaltungenText">
             <div id="boxVeranstaltungenText">
                 <div id="veranstaltungenTextContent">
-                    <p class="firstParagraph">Die nächsten <i>Veranstaltungen</i> welche für dieses Restaurant geplant sind. <br>
-                        Gegen das jährliche Einerlei verwöhnen wir Sie mit verschiedensten Spezialitätenabenden und Wochen.<br> Bei themenbezogener Atmosphäre servieren wir Menüs, besondere Speisen und Getränkespezialitäten.</p>
+                    <p class="firstParagraph">Die nächsten <i>Veranstaltungen</i> welche für dieses Restaurant geplant
+                        sind. <br>
+                        Gegen das jährliche Einerlei verwöhnen wir Sie mit verschiedensten Spezialitätenabenden und
+                        Wochen.<br> Bei themenbezogener Atmosphäre servieren wir Menüs, besondere Speisen und
+                        Getränkespezialitäten.</p>
                 </div>
             </div>
         </div>
@@ -170,7 +173,11 @@
                         <p>10.01</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                     <div class="eventItem" id="interJan">
@@ -178,7 +185,11 @@
                         <p>10.01</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -193,7 +204,11 @@
                         <p>21.02</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                     <div class="eventItem" id="interFeb">
@@ -201,7 +216,11 @@
                         <p>10.02</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -216,7 +235,11 @@
                         <p>01.03</p>
                         <p>ab 20</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                     <div class="eventItem" id="interMär">
@@ -224,7 +247,11 @@
                         <p>10.03</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -239,7 +266,11 @@
                         <p>Osterwochenende</p>
                         <p>Jeden Abend ab 17</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                     <div class="eventItem" id="interApr">
@@ -247,7 +278,11 @@
                         <p>10.04</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -262,7 +297,11 @@
                         <p>07.05 - 14.05</p>
                         <p>Jeden Tag ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                     <div class="eventItem" id="interMai">
@@ -270,7 +309,11 @@
                         <p>10.05</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -285,7 +328,11 @@
                         <p>20.06</p>
                         <p>ab 15</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                     <div class="eventItem" id="interJun">
@@ -293,7 +340,11 @@
                         <p>10.06</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -308,7 +359,11 @@
                         <p>10.07</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -323,7 +378,11 @@
                         <p>22.08</p>
                         <p>ab 21</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                     <div class="eventItem" id="interAug">
@@ -331,18 +390,23 @@
                         <p>10.08</p>
                         <p>ab 18</p>
                         <div class="hibiscsuPattern">
-                            <button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button>
+                            <button onclick="showFavourite(event)" class="faveButton"><img class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button  id="boxHandleSwipeRight" onclick="plusDivs(1)">
+        <button id="boxHandleSwipeRight" onclick="plusDivs(1)">
 
         </button>
     </div>
     <div class="boxComment">
-        <textarea type="text" id="homePageComment" class="CommentBox" placeholder="Meinungen für eine Veranstaltung"></textarea>
+        <textarea type="text" id="homePageComment" class="CommentBox"
+                  placeholder="Meinungen für eine Veranstaltung"></textarea>
         <button id="PostMeinung">Post</button>
     </div>
     <div id="homeCOmmentsShow">
@@ -361,7 +425,6 @@
                 return response.json()
             })
             .then(data => {
-                    console.log(data)
                     data.forEach(comment => {
                         var li = document.createElement("li");
                         var text = document.createTextNode(comment.comment);
@@ -375,16 +438,17 @@
     <script>
         function getCookie(cookieName) {
             let cookie = {};
-            document.cookie.split(';').forEach(function(el) {
-                let [key,value] = el.split('=');
+            document.cookie.split(';').forEach(function (el) {
+                let [key, value] = el.split('=');
                 cookie[key.trim()] = value;
             })
             return cookie[cookieName];
         }
+
         let tmp = getCookie("userId");
         var post = document.getElementById("PostMeinung");
-        post.addEventListener("click", function() {
-            var commentBoxValue= document.getElementById("homePageComment").value;
+        post.addEventListener("click", function () {
+            var commentBoxValue = document.getElementById("homePageComment").value;
             var root = document.getElementById("commentsFromEvents");
             var alreadyThereLi = root.getElementsByTagName("li")
             if (alreadyThereLi.length > 0) {
@@ -397,7 +461,7 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ userID: tmp, comment: commentBoxValue })
+                body: JSON.stringify({userID: tmp, comment: commentBoxValue})
             })
                 .then(response => response.json())
                 .then(data => (console.log(data)))
@@ -413,25 +477,23 @@
                     return response.json()
                 })
                 .then(data => {
-                    console.log(data)
-                    data.forEach(comment => {
-                        var li = document.createElement("li");
-                        var text = document.createTextNode(comment.comment);
-                        li.appendChild(text);
-                        document.getElementById("commentsFromEvents").appendChild(li);
-                    })
+                        data.forEach(comment => {
+                            var li = document.createElement("li");
+                            var text = document.createTextNode(comment.comment);
+                            li.appendChild(text);
+                            document.getElementById("commentsFromEvents").appendChild(li);
+                        })
                     }
                 )
         })
-        console.log(getCookie("about"))
         let pageVisits = {0: 0, 1: 0, 2: 0};
-        if ((getCookie("menu"))){
+        if ((getCookie("menu"))) {
             pageVisits[0] = Number(getCookie("menu"));
         }
-        if ((getCookie("about"))){
+        if ((getCookie("about"))) {
             pageVisits[1] = Number(getCookie("about"));
         }
-        if ((getCookie("reservations"))){
+        if ((getCookie("reservations"))) {
             pageVisits[2] = Number(getCookie("reservations"));
         }
         let sortedPages = Object.keys(pageVisits).sort((a, b) => pageVisits[b] - pageVisits[a]);
@@ -440,7 +502,7 @@
         for (let obj of sortedPages) {
             let li = document.createElement("li");
             let a = document.createElement("a");
-            switch (Number(obj)){
+            switch (Number(obj)) {
                 case 0:
                     a.href = "./html/menu.html";
                     a.textContent = "Menü";

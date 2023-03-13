@@ -12,138 +12,156 @@
     <title>About us</title>
 </head>
 <body>
-    <div id="headerAboutMe">
-        <div id="aboutMeNavGrid">
-            <a class="menuButton" href="../index.html">Home</a>
-            <a class="menuButton" href="menu.html">Menu</a>
-            <a class="menuButton" href="./about_me.html">About</a>
-            <a class="menuButton" href="./reservations.html">Reservations</a>
+<div id="headerAboutMe">
+    <div id="aboutMeNavGrid">
+        <a class="menuButton" href="../index.html">Home</a>
+        <a class="menuButton" href="menu.html">Menu</a>
+        <a class="menuButton" href="./about_me.html">About</a>
+        <a class="menuButton" href="./reservations.html">Reservations</a>
+    </div>
+    <div id="aboutMe">
+        <div>
+            <div id="circle2AboutMe"></div>
+            <div id="circle1AboutMe"></div>
         </div>
-        <div id="aboutMe">
-            <div>
-                <div id="circle2AboutMe"></div>
-                <div id="circle1AboutMe"></div>
-            </div>
-            <h1>About Us</h1>
-            <div>
-                <div id="circle3AboutMe"></div>
-                <div id="circle4AboutMe"></div>
-            </div>
+        <h1>About Us</h1>
+        <div>
+            <div id="circle3AboutMe"></div>
+            <div id="circle4AboutMe"></div>
         </div>
     </div>
-    <script>
-        function slideOut() {
-            console.log("Function is called")
-            if (document.getElementById('boxForAboutMePageText').style.width === '10%' || document.getElementById('boxForAboutMePageText').style.width === '') {
-                document.getElementById('boxForAboutMePageText').style.width = '70%'
-                document.getElementById('textAboutMe').style.visibility = 'visible'
-            } else {
-                document.getElementById('boxForAboutMePageText').style.width = '10%'
-                document.getElementById('textAboutMe').style.visibility = 'hidden'
-            }
+</div>
+<script>
+    function slideOut() {
+        if (document.getElementById('boxForAboutMePageText').style.width === '10%' || document.getElementById('boxForAboutMePageText').style.width === '') {
+            document.getElementById('boxForAboutMePageText').style.width = '70%'
+            document.getElementById('textAboutMe').style.visibility = 'visible'
+        } else {
+            document.getElementById('boxForAboutMePageText').style.width = '10%'
+            document.getElementById('textAboutMe').style.visibility = 'hidden'
         }
-    </script>
-    <div id="containerForAboutMePageText">
-        <div id="boxForAboutMePageText">
-            <p id="textAboutMe">
-                Das Restaurant Hibiscus (<i>super cooles Restaurant</i>),  bietet für groß bis klein eine vielzahl an Schmackofätzen von fleischigen Gerichten bis hin zu veganem Salat für
-                kleine Häschen ist alles dabei.
-                Um bei uns festlich zu Tafeln könnt ihr unter folgendem Link ein Tisch reservieren. <a href="./reservations">reservieren</a>.
-            </p>
-        </div>
-        <button onclick="slideOut()" id="aboutMeShowMoreText">Show more</button>
+    }
+</script>
+<div id="containerForAboutMePageText">
+    <div id="boxForAboutMePageText">
+        <p id="textAboutMe">
+            Das Restaurant Hibiscus (<i>super cooles Restaurant</i>), bietet für groß bis klein eine vielzahl an
+            Schmackofätzen von fleischigen Gerichten bis hin zu veganem Salat für
+            kleine Häschen ist alles dabei.
+            Um bei uns festlich zu Tafeln könnt ihr unter folgendem Link ein Tisch reservieren. <a
+                href="./reservations">reservieren</a>.
+        </p>
     </div>
-        <script>
-            function pictureForward(n) {
-                showDivs(slideIndex += n)
-            }
-            function showDivs(n) {
-                var i;
-                var x = document.querySelectorAll(".hPic");
-                for(i = 0; i < x.length; i++) {
-                    x[i].setAttribute("style", "display:none");
-                }
-                n++;
-                if (n > x.length) {
-                    slideIndex = 1;
-                }
-                x[slideIndex-1].setAttribute("style", "display:flex")
-            }
+    <button onclick="slideOut()" id="aboutMeShowMoreText">Show more</button>
+</div>
+<script>
+    function pictureForward(n) {
+        showDivs(slideIndex += n)
+    }
 
-            var slideIndex = 1;
-            showDivs(slideIndex);
+    function showDivs(n) {
+        var i;
+        var x = document.querySelectorAll(".hPic");
+        for (i = 0; i < x.length; i++) {
+            x[i].setAttribute("style", "display:none");
+        }
+        n++;
+        if (n > x.length) {
+            slideIndex = 1;
+        }
+        x[slideIndex - 1].setAttribute("style", "display:flex")
+    }
 
-        </script>
-        <div id="historyPic">
-            <div id="boxPics">
-                <img class="hPic" src="../ressources/restaurant.png">
-                <img class="hPic" src="https://digital.ihg.com/is/image/ihg/crowne-plaza-amsterdam-7059109412-2x1">
-                <img class="hPic" src="https://orania.berlin/fileadmin/_processed_/b/c/csm_Bar_Gastronomie_Kueche-55_243796bc80.jpg">
-                <img class="hPic" src="https://www.hafenkueche.de/wp-content/uploads/2021/02/hafenkueche-2.jpg">
-                <img class="hPic" src="https://media.istockphoto.com/id/1081422898/de/foto/pfanne-gebraten-ente.jpg?s=612x612&w=0&k=20&c=edZ-HdtxjxI6-uR9XJh5OFiyKgFc9DBoLZJT-5fPH5w=">
-                <img class="hPic" src="https://www.hallerhof.de/media/_processed_/0/4/csm_restaurant_oben_be0af3c52a.jpg">
-            </div>
-            <button onclick="pictureForward(1)" id="picForward"></button>
-        </div>
-        <div id="containerHistoryText">
-            <div id="boxHistoryText">
-                <h2>Entstehungsgeschichte</h2>
-            </div>
-        </div>
-        <div id="containerFirstIdeaContent">
-            <div id="boxFirstIdeaContent">
-                <h3>Die erste Idee</h3>
-                <p>
-                    Hier folgt ein Text über Salat von Wikipedia.
-                    Die Eigenart der amerikanischen Salate liegt in der Zusammensetzung von grünen Salaten mit Feldfrüchten und Obst, beispielsweise Waldorf-Salat,
-                    Geflügelsalat (Chicken Salad).[2] Europäische Einwanderer brachten ihre Salatrezepte in die USA. Mitte des 19. Jahrhunderts widmeten amerikanische
-                    Kochbücher den Salaten eigene Kapitel; Mayonnaise wurde mit einer Vielzahl von Obst und Gemüse gemischt. Ab Ende des gleichen Jahrhunderts erschienen
-                    spezielle Salatkochbücher, darunter das The American Salad Book von 1899, dessen Autor zugab, dass die Amerikaner zu wenig grüne Salate aßen. <br>
-                    Er wies auf die französische Küche als Vorbild für Salatzubereitungen, gleichzeitig auch darauf, dass Amerika ein viel größeres Angebot an Früchten und Gemüsen habe.
-                    Deutsche Salate waren demnach zu schwer für den amerikanischen Gaumen, während die britische Küche in Bezug auf Salate zu "barbarisch" erschien.
-                    Die Staaten Florida und Kalifornien brachten neue Salatvariationen hervor wie Chefsalat, Caesar Salad und Avocadosalat. Warme Salate wie Kartoffelsalat
-                    wurden während des 20. Jahrhunderts eingeführt.
-                </p>
-            </div>
-        </div>
-        <div id="containerGenericCharacteristicContent">
-            <div id="boxGenericCharacteristicContent">
-                <h3>Generative Merkmale</h3>
-                <p>
-                    Hier folgt ein Text über Merkmale von Basilikum ebenfalls von Wikipedia.
-                    Die Blütezeit reicht hauptsächlich von Juni bis September. Der vielblütige ährige Blütenstand enthält auch zwei- bis dreiblütige Zymen. Der Blütenstiel ist 2,5 Millimeter lang.
-                    Die zwittrige Blüte ist zygomorph und fünfzählig mit doppelter Blütenhülle. Die fünf Kelchblätter sind glockenförmig verwachsen und weisen die gleiche Farbe wie die Laubblätter auf.
-                    Der Kelch ist während des Blühvorgangs (Anthese) 1,5 bis 3 Millimeter lang und vergrößert sich bis zur Fruchtreife auf etwa 9 Millimeter.<br>
-                    Die fünf Kronblätter sind zu einer 8 bis 9 Millimeter langen Krone verwachsen. Die Kronröhre weist eine Länge von etwa 3 Millimeter auf.
-                    Die breite, mehr oder weniger flache Oberlippe ist vierlappig, etwa 3 Millimeter lang und etwa 4,5 Millimeter breit.<br>
-                    Die Unterlippe ist etwa 6 Millimeter groß. Es sind zwei ungleiche Paare von Staubblättern vorhanden, die mit der Krone verwachsen sind, aber untereinander frei sind.
-                    Die Staubbeutel öffnen sich mit einem Längsschlitz. Der Fruchtknoten ist oberständig. Der Griffel endet in einer zweilappigen Narbe.
-                    Die Frucht ist 1,5 bis 2 Millimeter lang und vom vergrößerten Kelch eingehüllt. Die Chromosomenzahl beträgt 2n = 48.
-                </p>
-            </div>
-        </div>
-    <div id="aboutMeFooter">
-        <div>
-            <h2>Adresse</h2>
-            <p><b>Name:</b> Hibiscus <br>
-                <b>Straße:</b> Eisenzahnstraße 90 <br>
-                <b>Postleitzahl:</b> 12589, Berlin <br>
-                <b>E-Mail:</b> info@restaurant-hibiscus.de <br>
-                <b>Tel.:</b> (+49) 163 5556416
-            </p>
-        </div>
-        <div>
-            <h2>Folge Uns</h2>
-            <p>Wir sind zu finden auf Facebook und Instagram</p>
-        </div>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+</script>
+<div id="historyPic">
+    <div id="boxPics">
+        <img class="hPic" src="../ressources/restaurant.png">
+        <img class="hPic" src="https://digital.ihg.com/is/image/ihg/crowne-plaza-amsterdam-7059109412-2x1">
+        <img class="hPic"
+             src="https://orania.berlin/fileadmin/_processed_/b/c/csm_Bar_Gastronomie_Kueche-55_243796bc80.jpg">
+        <img class="hPic" src="https://www.hafenkueche.de/wp-content/uploads/2021/02/hafenkueche-2.jpg">
+        <img class="hPic"
+             src="https://media.istockphoto.com/id/1081422898/de/foto/pfanne-gebraten-ente.jpg?s=612x612&w=0&k=20&c=edZ-HdtxjxI6-uR9XJh5OFiyKgFc9DBoLZJT-5fPH5w=">
+        <img class="hPic" src="https://www.hallerhof.de/media/_processed_/0/4/csm_restaurant_oben_be0af3c52a.jpg">
     </div>
+    <button onclick="pictureForward(1)" id="picForward"></button>
+</div>
+<div id="containerHistoryText">
+    <div id="boxHistoryText">
+        <h2>Entstehungsgeschichte</h2>
+    </div>
+</div>
+<div id="containerFirstIdeaContent">
+    <div id="boxFirstIdeaContent">
+        <h3>Die erste Idee</h3>
+        <p>
+            Hier folgt ein Text über Salat von Wikipedia.
+            Die Eigenart der amerikanischen Salate liegt in der Zusammensetzung von grünen Salaten mit Feldfrüchten und
+            Obst, beispielsweise Waldorf-Salat,
+            Geflügelsalat (Chicken Salad).[2] Europäische Einwanderer brachten ihre Salatrezepte in die USA. Mitte des
+            19. Jahrhunderts widmeten amerikanische
+            Kochbücher den Salaten eigene Kapitel; Mayonnaise wurde mit einer Vielzahl von Obst und Gemüse gemischt. Ab
+            Ende des gleichen Jahrhunderts erschienen
+            spezielle Salatkochbücher, darunter das The American Salad Book von 1899, dessen Autor zugab, dass die
+            Amerikaner zu wenig grüne Salate aßen. <br>
+            Er wies auf die französische Küche als Vorbild für Salatzubereitungen, gleichzeitig auch darauf, dass
+            Amerika ein viel größeres Angebot an Früchten und Gemüsen habe.
+            Deutsche Salate waren demnach zu schwer für den amerikanischen Gaumen, während die britische Küche in Bezug
+            auf Salate zu "barbarisch" erschien.
+            Die Staaten Florida und Kalifornien brachten neue Salatvariationen hervor wie Chefsalat, Caesar Salad und
+            Avocadosalat. Warme Salate wie Kartoffelsalat
+            wurden während des 20. Jahrhunderts eingeführt.
+        </p>
+    </div>
+</div>
+<div id="containerGenericCharacteristicContent">
+    <div id="boxGenericCharacteristicContent">
+        <h3>Generative Merkmale</h3>
+        <p>
+            Hier folgt ein Text über Merkmale von Basilikum ebenfalls von Wikipedia.
+            Die Blütezeit reicht hauptsächlich von Juni bis September. Der vielblütige ährige Blütenstand enthält auch
+            zwei- bis dreiblütige Zymen. Der Blütenstiel ist 2,5 Millimeter lang.
+            Die zwittrige Blüte ist zygomorph und fünfzählig mit doppelter Blütenhülle. Die fünf Kelchblätter sind
+            glockenförmig verwachsen und weisen die gleiche Farbe wie die Laubblätter auf.
+            Der Kelch ist während des Blühvorgangs (Anthese) 1,5 bis 3 Millimeter lang und vergrößert sich bis zur
+            Fruchtreife auf etwa 9 Millimeter.<br>
+            Die fünf Kronblätter sind zu einer 8 bis 9 Millimeter langen Krone verwachsen. Die Kronröhre weist eine
+            Länge von etwa 3 Millimeter auf.
+            Die breite, mehr oder weniger flache Oberlippe ist vierlappig, etwa 3 Millimeter lang und etwa 4,5
+            Millimeter breit.<br>
+            Die Unterlippe ist etwa 6 Millimeter groß. Es sind zwei ungleiche Paare von Staubblättern vorhanden, die mit
+            der Krone verwachsen sind, aber untereinander frei sind.
+            Die Staubbeutel öffnen sich mit einem Längsschlitz. Der Fruchtknoten ist oberständig. Der Griffel endet in
+            einer zweilappigen Narbe.
+            Die Frucht ist 1,5 bis 2 Millimeter lang und vom vergrößerten Kelch eingehüllt. Die Chromosomenzahl beträgt
+            2n = 48.
+        </p>
+    </div>
+</div>
+<div id="aboutMeFooter">
+    <div>
+        <h2>Adresse</h2>
+        <p><b>Name:</b> Hibiscus <br>
+            <b>Straße:</b> Eisenzahnstraße 90 <br>
+            <b>Postleitzahl:</b> 12589, Berlin <br>
+            <b>E-Mail:</b> info@restaurant-hibiscus.de <br>
+            <b>Tel.:</b> (+49) 163 5556416
+        </p>
+    </div>
+    <div>
+        <h2>Folge Uns</h2>
+        <p>Wir sind zu finden auf Facebook und Instagram</p>
+    </div>
+</div>
 <script>
     const countCookie = getCookie('about')
-    if(!countCookie) {
-        document.cookie = ('about='+ 1+"; path=/");
-        console.log("new counter")
-    }else {
-        document.cookie = ('about='+ (Number(countCookie)+1)+"; path=/");
+    if (!countCookie) {
+        document.cookie = ('about=' + 1 + "; path=/");
+    } else {
+        document.cookie = ('about=' + (Number(countCookie) + 1) + "; path=/");
     }
 
     function getCookie(name) {

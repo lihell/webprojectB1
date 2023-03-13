@@ -34,437 +34,547 @@
         </div>
     </div>
 </div>
-        <div id="containerVorspeisen">
-            <img id="vorspeisePic" src="https://www.cooknsoul.de/wp-content/uploads/2020/12/Starter.jpg"/>
-            <div id="orangeBoxVorspeisen">
-                <div class="commentsAndMenu">
-                    <ul id="vorspeiseCommentList" class="commentList">
+<div id="containerVorspeisen">
+    <img id="vorspeisePic" src="https://www.cooknsoul.de/wp-content/uploads/2020/12/Starter.jpg"/>
+    <div id="orangeBoxVorspeisen">
+        <div class="commentsAndMenu">
+            <ul id="vorspeiseCommentList" class="commentList">
 
-                    </ul>
-                    <div id="dottedWhiteMenuVorspeisen">
-                        <div id="vorspeisenContent">
-                            <h2 class="menuTitle">Vorspeisen</h2>
-                            <table class="fontTabel">
-                                <tr>
-                                    <th>Gericht</th>
-                                    <th>Preis in EUR</th>
-                                    <th>Favoriten</th>
-                                </tr>
-                                <tr>
-                                    <td>Alfreds Futterkiste</td>
-                                    <td>10,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav6" data-fave="notFave" class="star" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <script>
-                                    function getCookie(cookieName) {
-                                        let cookie = {};
-                                        document.cookie.split(';').forEach(function(el) {
-                                            let [key,value] = el.split('=');
-                                            cookie[key.trim()] = value;
-                                        })
-                                        return cookie[cookieName];
-                                    }
-                                </script>
-                                <tr>
-                                    <td>Centro comercial Moctezuma</td>
-                                    <td>12,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav1" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Ernst Handel</td>
-                                    <td>12,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav2" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Island Trading</td>
-                                    <td>18,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav3" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Laughing Bacchus Winecellars</td>
-                                    <td>15,60</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav4" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Magazzini Alimentari Riuniti</td>
-                                    <td>11,90</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav5" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="boxComment">
-                    <textarea type="text" id="vorspeiseComment" class="CommentBox" placeholder="Meinungen für unsere Vorspeise"></textarea>
-                    <button class="PostMeinung" id="PostMeinungVorspeise">Post</button>
-                </div>
-                <script>
-                    fetch('http://localhost:8000/getCommentsVorspeise', {
-                        method: 'GET',
-                    })
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok')
-                            }
-                            return response.json()
-                        })
-                        .then(data => {
-                                console.log(data)
-                                data.forEach(comment => {
-                                    var li = document.createElement("li");
-                                    var text = document.createTextNode(comment.comment);
-                                    li.appendChild(text);
-                                    document.getElementById("vorspeiseCommentList").appendChild(li);
+            </ul>
+            <div id="dottedWhiteMenuVorspeisen">
+                <div id="vorspeisenContent">
+                    <h2 class="menuTitle">Vorspeisen</h2>
+                    <table class="fontTabel">
+                        <tr>
+                            <th>Gericht</th>
+                            <th>Preis in EUR</th>
+                            <th>Favoriten</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>10,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav6"
+                                                                                               data-fave="notFave"
+                                                                                               class="star"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <script>
+                            function getCookie(cookieName) {
+                                let cookie = {};
+                                document.cookie.split(';').forEach(function (el) {
+                                    let [key, value] = el.split('=');
+                                    cookie[key.trim()] = value;
                                 })
+                                return cookie[cookieName];
                             }
-                        )
-
-                    function getCookie(cookieName) {
-                        let cookie = {};
-                        document.cookie.split(';').forEach(function(el) {
-                            let [key,value] = el.split('=');
-                            cookie[key.trim()] = value;
-                        })
-                        return cookie[cookieName];
+                        </script>
+                        <tr>
+                            <td>Centro comercial Moctezuma</td>
+                            <td>12,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav1" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ernst Handel</td>
+                            <td>12,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav2" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Island Trading</td>
+                            <td>18,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav3" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Laughing Bacchus Winecellars</td>
+                            <td>15,60</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav4" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Magazzini Alimentari Riuniti</td>
+                            <td>11,90</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav5" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="boxComment">
+            <textarea type="text" id="vorspeiseComment" class="CommentBox"
+                      placeholder="Meinungen für unsere Vorspeise"></textarea>
+            <button class="PostMeinung" id="PostMeinungVorspeise">Post</button>
+        </div>
+        <script>
+            fetch('http://localhost:8000/getCommentsVorspeise', {
+                method: 'GET',
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok')
                     }
-                    let tmpVorspeise = getCookie("userId");
-                    var postVor = document.getElementById("PostMeinungVorspeise");
-                    postVor.addEventListener("click", function() {
-                        var commentBoxValue= document.getElementById("vorspeiseComment").value;
-                        var root = document.getElementById("vorspeiseCommentList");
-                        var alreadyThereLi = root.getElementsByTagName("li")
-                        if (alreadyThereLi.length > 0) {
-                            for (let i = alreadyThereLi.length - 1; i >= 0; i--) {
-                                root.removeChild(alreadyThereLi[i])
-                            }
-                        }
-                        fetch('http://localhost:8000/postCommentsVorspeise', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ userID: tmpVorspeise, comment: commentBoxValue })
+                    return response.json()
+                })
+                .then(data => {
+                        data.forEach(comment => {
+                            var li = document.createElement("li");
+                            var text = document.createTextNode(comment.comment);
+                            li.appendChild(text);
+                            document.getElementById("vorspeiseCommentList").appendChild(li);
                         })
-                            .then(response => response.json())
-                            .then(data => (console.log(data)))
-                            .catch(error => console.error(error));
-
-                        fetch('http://localhost:8000/getCommentsVorspeise', {
-                            method: 'GET',
-                        })
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok')
-                                }
-                                return response.json()
-                            })
-                            .then(data => {
-                                    console.log(data)
-                                    data.forEach(comment => {
-                                        var li = document.createElement("li");
-                                        var text = document.createTextNode(comment.comment);
-                                        li.appendChild(text);
-                                        document.getElementById("vorspeiseCommentList").appendChild(li);
-                                    })
-                                }
-                            )
-                    })
-                </script>
-            </div>
-        </div>
-        <div id="containerHauptspeisen">
-            <img id="hauptspeisePic" src="https://img1.kochrezepte.at/use/2/hauptspeisen-rezepte_2529.jpg"/>
-            <div id="orangeBoxHauptspeisen">
-                <div id="commentsAndMenuHaupt">
-                    <div id="dottedWhiteMenuHauptspeisen">
-                        <div id="hauptspeisenContent">
-                            <h2 class="menuTitle">Hauptgerichte</h2>
-                            <table class="fontTabel">
-                                <tr >
-                                    <th>Gericht</th>
-                                    <th>Preis in EUR</th>
-                                    <th>Favoriten</th>
-                                </tr>
-                                <tr >
-                                    <td>Kartoffel Spinat Maultaschen</td>
-                                    <td>26,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav7" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr >
-                                    <td>Steinbutt-Rücken im Stück gekocht</td>
-                                    <td>12,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav8" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr >
-                                    <td>Krosse Vierländer Ente</td>
-                                    <td>11,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav9" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr >
-                                    <td>Island Trading</td>
-                                    <td>22,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav10" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr>
-                                    <td>Knödel mit Quark aus der Wilstermarsch</td>
-                                    <td>11,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav11" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr >
-                                    <td>Tristan Languste</td>
-                                    <td>11,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav12" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                                </tr>
-                                <tr >
-                                    <td>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    </td>
-                                    <td></td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <ul id="hauptspeiseCommentList" class="commentList">
-
-                    </ul>
-                </div>
-                <div class="boxComment">
-                    <textarea type="text" id="hauptspeiseComment" class="CommentBox" placeholder="Meinungen für unsere Hauptspeisen"></textarea>
-                    <button class="PostMeinung" id="PostMeinungHauptspeise">Post</button>
-                </div>
-                <script>
-
-                    fetch('http://localhost:8000/getCommentsHauptspeise', {
-                        method: 'GET',
-                    })
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok')
-                            }
-                            return response.json()
-                        })
-                        .then(data => {
-                                console.log(data)
-                                data.forEach(comment => {
-                                    var li = document.createElement("li");
-                                    var text = document.createTextNode(comment.comment);
-                                    li.appendChild(text);
-                                    document.getElementById("hauptspeiseCommentList").appendChild(li);
-                                })
-                            }
-                        )
-                    function getCookie(cookieName) {
-                        let cookie = {};
-                        document.cookie.split(';').forEach(function(el) {
-                            let [key,value] = el.split('=');
-                            cookie[key.trim()] = value;
-                        })
-                        return cookie[cookieName];
                     }
-                    let tmpHaupt = getCookie("userId");
-                    var postHaupt = document.getElementById("PostMeinungHauptspeise");
-                    postHaupt.addEventListener("click", function() {
-                        var commentBoxValue= document.getElementById("hauptspeiseComment").value;
-                        var root = document.getElementById("hauptspeiseCommentList");
-                        var alreadyThereLi = root.getElementsByTagName("li")
-                        if (alreadyThereLi.length > 0) {
-                            for (let i = alreadyThereLi.length - 1; i >= 0; i--) {
-                                root.removeChild(alreadyThereLi[i])
-                            }
-                        }
-                        fetch('http://localhost:8000/postCommentsHauptspeise', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ userID: tmpHaupt, comment: commentBoxValue })
-                        })
-                            .then(response => response.json())
-                            .then(data => (console.log(data)))
-                            .catch(error => console.error(error));
+                )
 
-                        fetch('http://localhost:8000/getCommentsHauptspeise', {
-                            method: 'GET',
-                        })
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok')
-                                }
-                                return response.json()
-                            })
-                            .then(data => {
-                                    console.log(data)
-                                    data.forEach(comment => {
-                                        var li = document.createElement("li");
-                                        var text = document.createTextNode(comment.comment);
-                                        li.appendChild(text);
-                                        document.getElementById("hauptspeiseCommentList").appendChild(li);
-                                    })
-                                }
-                            )
-                    })
-                </script>
-            </div>
-        </div>
-        <div id="containerNachspeisen">
-            <img id="nachspeisePic" src="https://www.lecker.de/assets/styles/300x225/public/field/image/schoko-dessert-b13.jpg?itok=SwC83Oe7"/>
-            <div id="orangeBoxNachspeisen">
-                <div class="commentsAndMenu">
-                    <ul id="nachspeiseCommentList" class="commentList">
+            function getCookie(cookieName) {
+                let cookie = {};
+                document.cookie.split(';').forEach(function (el) {
+                    let [key, value] = el.split('=');
+                    cookie[key.trim()] = value;
+                })
+                return cookie[cookieName];
+            }
 
-                    </ul>
-                    <div id="dottedWhiteMenuNachspeisen">
-                        <h2 class="menuTitle">Nachspeisen</h2>
-                        <table class="fontTabel">
-                            <tr>
-                                <th>Gericht</th>
-                                <th>Preis in EUR</th>
-                                <th>Favoriten</th>
-                            </tr>
-                            <tr >
-                                <td>Schokoladen-Malheur</td>
-                                <td>13,00</td>
-                                <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav13" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                            </tr>
-                            <tr>
-                                <td>Knödel mit Quark aus der Wilstermarsch</td>
-                                <td>10,00</td>
-                                <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav14" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                            </tr>
-                            <tr>
-                                <td>Gries-Flammerie</td>
-                                <td>11,00</td>
-                                <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav15" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                            </tr>
-                            <tr >
-                                <td>Apfel-Tarte</td>
-                                <td>9,00</td>
-                                <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav16" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
-                            </tr>
-                            <tr >
-                                <td>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </td>
-                                <td></td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="boxComment">
-                    <textarea type="text" id="nachspeiseComment" class="CommentBox" placeholder="Meinungen für unsere Nachspeisen"></textarea>
-                    <button class="PostMeinung" id="PostMeinungNachspeise">Post</button>
-                </div>
-                <script>
-
-                    fetch('http://localhost:8000/getCommentsNachspeise', {
-                        method: 'GET',
-                    })
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok')
-                            }
-                            return response.json()
-                        })
-                        .then(data => {
-                                console.log(data)
-                                data.forEach(comment => {
-                                    var li = document.createElement("li");
-                                    var text = document.createTextNode(comment.comment);
-                                    li.appendChild(text);
-                                    document.getElementById("nachspeiseCommentList").appendChild(li);
-                                })
-                            }
-                        )
-
-                    function getCookie(cookieName) {
-                        let cookie = {};
-                        document.cookie.split(';').forEach(function(el) {
-                            let [key,value] = el.split('=');
-                            cookie[key.trim()] = value;
-                        })
-                        return cookie[cookieName];
+            let tmpVorspeise = getCookie("userId");
+            var postVor = document.getElementById("PostMeinungVorspeise");
+            postVor.addEventListener("click", function () {
+                var commentBoxValue = document.getElementById("vorspeiseComment").value;
+                var root = document.getElementById("vorspeiseCommentList");
+                var alreadyThereLi = root.getElementsByTagName("li")
+                if (alreadyThereLi.length > 0) {
+                    for (let i = alreadyThereLi.length - 1; i >= 0; i--) {
+                        root.removeChild(alreadyThereLi[i])
                     }
-                    let tmpNach = getCookie("userId");
-                    var postNach = document.getElementById("PostMeinungNachspeise");
-                    postNach.addEventListener("click", function() {
-                        var commentBoxValue= document.getElementById("nachspeiseComment").value;
-                        var root = document.getElementById("nachspeiseCommentList");
-                        var alreadyThereLi = root.getElementsByTagName("li")
-                        if (alreadyThereLi.length > 0) {
-                            for (let i = alreadyThereLi.length - 1; i >= 0; i--) {
-                                root.removeChild(alreadyThereLi[i])
-                            }
-                        }
-                        fetch('http://localhost:8000/postCommentsNachspeise', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ userID: tmpNach, comment: commentBoxValue })
-                        })
-                            .then(response => response.json())
-                            .then(data => (console.log(data)))
-                            .catch(error => console.error(error));
+                }
+                fetch('http://localhost:8000/postCommentsVorspeise', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({userID: tmpVorspeise, comment: commentBoxValue})
+                })
+                    .then(response => response.json())
+                    .then(data => (console.log(data)))
+                    .catch(error => console.error(error));
 
-                        fetch('http://localhost:8000/getCommentsNachspeise', {
-                            method: 'GET',
-                        })
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Network response was not ok')
-                                }
-                                return response.json()
-                            })
-                            .then(data => {
-                                    console.log(data)
-                                    data.forEach(comment => {
-                                        var li = document.createElement("li");
-                                        var text = document.createTextNode(comment.comment);
-                                        li.appendChild(text);
-                                        document.getElementById("nachspeiseCommentList").appendChild(li);
-                                    })
-                                }
-                            )
+                fetch('http://localhost:8000/getCommentsVorspeise', {
+                    method: 'GET',
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok')
+                        }
+                        return response.json()
                     })
-                </script>
+                    .then(data => {
+                            data.forEach(comment => {
+                                var li = document.createElement("li");
+                                var text = document.createTextNode(comment.comment);
+                                li.appendChild(text);
+                                document.getElementById("vorspeiseCommentList").appendChild(li);
+                            })
+                        }
+                    )
+            })
+        </script>
+    </div>
+</div>
+<div id="containerHauptspeisen">
+    <img id="hauptspeisePic" src="https://img1.kochrezepte.at/use/2/hauptspeisen-rezepte_2529.jpg"/>
+    <div id="orangeBoxHauptspeisen">
+        <div id="commentsAndMenuHaupt">
+            <div id="dottedWhiteMenuHauptspeisen">
+                <div id="hauptspeisenContent">
+                    <h2 class="menuTitle">Hauptgerichte</h2>
+                    <table class="fontTabel">
+                        <tr>
+                            <th>Gericht</th>
+                            <th>Preis in EUR</th>
+                            <th>Favoriten</th>
+                        </tr>
+                        <tr>
+                            <td>Kartoffel Spinat Maultaschen</td>
+                            <td>26,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav7" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Steinbutt-Rücken im Stück gekocht</td>
+                            <td>12,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav8" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Krosse Vierländer Ente</td>
+                            <td>11,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav9" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Island Trading</td>
+                            <td>22,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav10" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Knödel mit Quark aus der Wilstermarsch</td>
+                            <td>11,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav11" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tristan Languste</td>
+                            <td>11,00</td>
+                            <td>
+                                <button onclick="showFavourite(event)" class="faveButton"><img id="fav12" class="star"
+                                                                                               data-fave="notFave"
+                                                                                               height="25px"
+                                                                                               width="25px"
+                                                                                               src="../ressources/notFaveStar.png"/>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <ul id="hauptspeiseCommentList" class="commentList">
+
+            </ul>
+        </div>
+        <div class="boxComment">
+            <textarea type="text" id="hauptspeiseComment" class="CommentBox"
+                      placeholder="Meinungen für unsere Hauptspeisen"></textarea>
+            <button class="PostMeinung" id="PostMeinungHauptspeise">Post</button>
+        </div>
+        <script>
+
+            fetch('http://localhost:8000/getCommentsHauptspeise', {
+                method: 'GET',
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok')
+                    }
+                    return response.json()
+                })
+                .then(data => {
+                        data.forEach(comment => {
+                            var li = document.createElement("li");
+                            var text = document.createTextNode(comment.comment);
+                            li.appendChild(text);
+                            document.getElementById("hauptspeiseCommentList").appendChild(li);
+                        })
+                    }
+                )
+
+            function getCookie(cookieName) {
+                let cookie = {};
+                document.cookie.split(';').forEach(function (el) {
+                    let [key, value] = el.split('=');
+                    cookie[key.trim()] = value;
+                })
+                return cookie[cookieName];
+            }
+
+            let tmpHaupt = getCookie("userId");
+            var postHaupt = document.getElementById("PostMeinungHauptspeise");
+            postHaupt.addEventListener("click", function () {
+                var commentBoxValue = document.getElementById("hauptspeiseComment").value;
+                var root = document.getElementById("hauptspeiseCommentList");
+                var alreadyThereLi = root.getElementsByTagName("li")
+                if (alreadyThereLi.length > 0) {
+                    for (let i = alreadyThereLi.length - 1; i >= 0; i--) {
+                        root.removeChild(alreadyThereLi[i])
+                    }
+                }
+                fetch('http://localhost:8000/postCommentsHauptspeise', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({userID: tmpHaupt, comment: commentBoxValue})
+                })
+                    .then(response => response.json())
+                    .then(data => (console.log(data)))
+                    .catch(error => console.error(error));
+
+                fetch('http://localhost:8000/getCommentsHauptspeise', {
+                    method: 'GET',
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok')
+                        }
+                        return response.json()
+                    })
+                    .then(data => {
+                            data.forEach(comment => {
+                                var li = document.createElement("li");
+                                var text = document.createTextNode(comment.comment);
+                                li.appendChild(text);
+                                document.getElementById("hauptspeiseCommentList").appendChild(li);
+                            })
+                        }
+                    )
+            })
+        </script>
+    </div>
+</div>
+<div id="containerNachspeisen">
+    <img id="nachspeisePic"
+         src="https://www.lecker.de/assets/styles/300x225/public/field/image/schoko-dessert-b13.jpg?itok=SwC83Oe7"/>
+    <div id="orangeBoxNachspeisen">
+        <div class="commentsAndMenu">
+            <ul id="nachspeiseCommentList" class="commentList">
+
+            </ul>
+            <div id="dottedWhiteMenuNachspeisen">
+                <h2 class="menuTitle">Nachspeisen</h2>
+                <table class="fontTabel">
+                    <tr>
+                        <th>Gericht</th>
+                        <th>Preis in EUR</th>
+                        <th>Favoriten</th>
+                    </tr>
+                    <tr>
+                        <td>Schokoladen-Malheur</td>
+                        <td>13,00</td>
+                        <td>
+                            <button onclick="showFavourite(event)" class="faveButton"><img id="fav13" class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Knödel mit Quark aus der Wilstermarsch</td>
+                        <td>10,00</td>
+                        <td>
+                            <button onclick="showFavourite(event)" class="faveButton"><img id="fav14" class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gries-Flammerie</td>
+                        <td>11,00</td>
+                        <td>
+                            <button onclick="showFavourite(event)" class="faveButton"><img id="fav15" class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Apfel-Tarte</td>
+                        <td>9,00</td>
+                        <td>
+                            <button onclick="showFavourite(event)" class="faveButton"><img id="fav16" class="star"
+                                                                                           data-fave="notFave"
+                                                                                           height="25px" width="25px"
+                                                                                           src="../ressources/notFaveStar.png"/>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
             </div>
         </div>
-        <div id="menuFooter">
-            <div>
-                <h2>Adresse</h2>
-                <p><b>Name:</b> Hibiscus <br>
-                    <b>Straße:</b> Eisenzahnstraße 90 <br>
-                    <b>Postleitzahl:</b> 12589, Berlin <br>
-                    <b>E-Mail:</b> info@restaurant-hibiscus.de <br>
-                    <b>Tel.:</b> (+49) 163 5556416
-                </p>
-            </div>
-            <div>
-                <h2>Folge Uns</h2>
-                <p>Wir sind zu finden auf Facebook und Instagram</p>
-            </div>
+        <div class="boxComment">
+            <textarea type="text" id="nachspeiseComment" class="CommentBox"
+                      placeholder="Meinungen für unsere Nachspeisen"></textarea>
+            <button class="PostMeinung" id="PostMeinungNachspeise">Post</button>
         </div>
+        <script>
+
+            fetch('http://localhost:8000/getCommentsNachspeise', {
+                method: 'GET',
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok')
+                    }
+                    return response.json()
+                })
+                .then(data => {
+                        data.forEach(comment => {
+                            var li = document.createElement("li");
+                            var text = document.createTextNode(comment.comment);
+                            li.appendChild(text);
+                            document.getElementById("nachspeiseCommentList").appendChild(li);
+                        })
+                    }
+                )
+
+            function getCookie(cookieName) {
+                let cookie = {};
+                document.cookie.split(';').forEach(function (el) {
+                    let [key, value] = el.split('=');
+                    cookie[key.trim()] = value;
+                })
+                return cookie[cookieName];
+            }
+
+            let tmpNach = getCookie("userId");
+            var postNach = document.getElementById("PostMeinungNachspeise");
+            postNach.addEventListener("click", function () {
+                var commentBoxValue = document.getElementById("nachspeiseComment").value;
+                var root = document.getElementById("nachspeiseCommentList");
+                var alreadyThereLi = root.getElementsByTagName("li")
+                if (alreadyThereLi.length > 0) {
+                    for (let i = alreadyThereLi.length - 1; i >= 0; i--) {
+                        root.removeChild(alreadyThereLi[i])
+                    }
+                }
+                fetch('http://localhost:8000/postCommentsNachspeise', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({userID: tmpNach, comment: commentBoxValue})
+                })
+                    .then(response => response.json())
+                    .then(data => (console.log(data)))
+                    .catch(error => console.error(error));
+
+                fetch('http://localhost:8000/getCommentsNachspeise', {
+                    method: 'GET',
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok')
+                        }
+                        return response.json()
+                    })
+                    .then(data => {
+                            data.forEach(comment => {
+                                var li = document.createElement("li");
+                                var text = document.createTextNode(comment.comment);
+                                li.appendChild(text);
+                                document.getElementById("nachspeiseCommentList").appendChild(li);
+                            })
+                        }
+                    )
+            })
+        </script>
+    </div>
+</div>
+<div id="menuFooter">
+    <div>
+        <h2>Adresse</h2>
+        <p><b>Name:</b> Hibiscus <br>
+            <b>Straße:</b> Eisenzahnstraße 90 <br>
+            <b>Postleitzahl:</b> 12589, Berlin <br>
+            <b>E-Mail:</b> info@restaurant-hibiscus.de <br>
+            <b>Tel.:</b> (+49) 163 5556416
+        </p>
+    </div>
+    <div>
+        <h2>Folge Uns</h2>
+        <p>Wir sind zu finden auf Facebook und Instagram</p>
+    </div>
+</div>
 <script>
     let tmp = getCookie("userId");
+
     function showFavourite(event) {
         const button = event.target;
-        console.log(button.dataset.fave);
-        console.log(button.id);
         if (button.dataset.fave === "notFave") {
             button.dataset.fave = "isFave"
             button.src = "../ressources/faveStar.png"
@@ -477,7 +587,7 @@
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ userID: tmp,buttonID: button.id, isFavNow: !(button.dataset.fave === "notFave") })
+            body: JSON.stringify({userID: tmp, buttonID: button.id, isFavNow: !(button.dataset.fave === "notFave")})
         })
             .then(response => response.json())
             .then(data => console.log(data))
@@ -495,13 +605,10 @@
             return response.json()
         })
         .then(data => {
-                console.log("Hallloo hieeeer----------------------------" + data)
-            //document.getElementById("fav1").dataset.fave = data
+                //document.getElementById("fav1").dataset.fave = data
                 data.forEach(object => {
-                    console.log("Hier:" + tmp)
-                    console.log("===" + object.userID)
                     const button = document.getElementById(object.buttonID);
-                    if (tmp === object.userID){
+                    if (tmp === object.userID) {
 
                         if (object.isFavNow) {
                             button.dataset.fave = "isFave"
@@ -510,19 +617,17 @@
                             button.src = "../ressources/notFaveStar.png"
                             button.dataset.fave = "notFave"
                         }
-                        console.log("Hier: " + object.buttonID)
                     }
                 })
             }
         )
 
     const countCookie = getCookie('menu')
-    if(!countCookie) {
-        document.cookie = ('menu=' + 1+"; path=/");
+    if (!countCookie) {
+        document.cookie = ('menu=' + 1 + "; path=/");
 
-        console.log("new counter")
-    }else {
-        document.cookie = ('menu='+ (Number(countCookie)+1)+"; path=/");
+    } else {
+        document.cookie = ('menu=' + (Number(countCookie) + 1) + "; path=/");
     }
 
     function getCookie(name) {
@@ -537,5 +642,5 @@
     }
 
 </script>
-    </body>
+</body>
 </html>

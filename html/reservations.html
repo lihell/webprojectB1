@@ -1,189 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="../css/Reservations.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Reservierungen</title>
 </head>
 <body>
-    <div id="headerReservation">
-        <div id="reservationNavGrid">
-            <a class="menuButton" href="../index.html">Home</a>
-            <a class="menuButton" href="./menu.html">Menu</a>
-            <a class="menuButton" href="./about_me.html">About</a>
-            <a class="menuButton" href="reservations.html">Reservations</a>
+<div id="headerReservation">
+    <div id="reservationNavGrid">
+        <a class="menuButton" href="../index.html">Home</a>
+        <a class="menuButton" href="./menu.html">Menu</a>
+        <a class="menuButton" href="./about_me.html">About</a>
+        <a class="menuButton" href="reservations.html">Reservations</a>
+    </div>
+    <div id="reservation">
+        <div>
+            <div id="circle2Reservation"></div>
+            <div id="circle1Reservation"></div>
         </div>
-        <div id="reservation">
-            <div>
-                <div id="circle2Reservation"></div>
-                <div id="circle1Reservation"></div>
-            </div>
-            <h1>Reservations</h1>
-            <div>
-                <div id="circle3Reservation"></div>
-                <div id="circle4Reservation"></div>
-            </div>
+        <h1>Reservations</h1>
+        <div>
+            <div id="circle3Reservation"></div>
+            <div id="circle4Reservation"></div>
         </div>
     </div>
-    <script>
-        function slideOut() {
-            console.log("Function is called")
-            if (document.getElementById('boxForReservationPageText').style.width === '10%' || document.getElementById('boxForReservationPageText').style.width === '') {
-                document.getElementById('boxForReservationPageText').style.width = '70%'
-                document.getElementById('textReservationPage').style.visibility = 'visible'
-            } else {
-                document.getElementById('boxForReservationPageText').style.width = '10%'
-                document.getElementById('textReservationPage').style.visibility = 'hidden'
-            }
+</div>
+<script>
+    function slideOut() {
+        if (document.getElementById('boxForReservationPageText').style.width === '10%' || document.getElementById('boxForReservationPageText').style.width === '') {
+            document.getElementById('boxForReservationPageText').style.width = '70%'
+            document.getElementById('textReservationPage').style.visibility = 'visible'
+        } else {
+            document.getElementById('boxForReservationPageText').style.width = '10%'
+            document.getElementById('textReservationPage').style.visibility = 'hidden'
         }
-    </script>
-    <div id="containerForReservationPageText">
-        <div id="boxForReservationPageText">
-            <p id="textReservationPage">
-                Unsere astreine Marketingkampagne hat sie um den Finger gewickelt?
-                <span style="color: red">Kein Problem!</span> Im folgenden können sie
-                schnell und einfach eine Reservierung machen.
+    }
+</script>
+<div id="containerForReservationPageText">
+    <div id="boxForReservationPageText">
+        <p id="textReservationPage">
+            Unsere astreine Marketingkampagne hat sie um den Finger gewickelt?
+            <span style="color: red">Kein Problem!</span> Im folgenden können sie
+            schnell und einfach eine Reservierung machen.
+        </p>
+    </div>
+    <button onclick="slideOut()" id="reservationShowMoreText">Show more</button>
+</div>
+<div id="pictureRestaurantReservation">
+    <div id="divPicReservation">
+        <img id="reservationsPicRestaurant" src="../ressources/restaurant.png" height="200" width="350"/>
+        <h2 id="textToPicReservation">Was können sie bei uns erwarten?</h2>
+    </div>
+</div>
+<div id="containerReservationText">
+    <div id="orangeBlockReservationText">
+        <div id="orangeReservationBlockContent">
+            <h3>Unser wundervolles Steak</h3>
+            <p>
+                Hier folgt ein Text über Steak von Wikipedia. <br/>
+                Ein Steak (englisch steak [steik], aus altnordisch steik, „Braten“, zu
+                steikja „am Spieß braten“; vgl. neuisländisch steik „Steak“ oder
+                „Braten“; steikja, „braten“) ist eine zum Kurzbraten oder Grillen
+                geeignete Rindfleischscheibe. Steaks, die von anderen Tier- und
+                Fleischarten stammen, tragen einen entsprechenden Hinweis in ihrer
+                Bezeichnung (z. B. Kalbssteak, Schweinesteak, Putensteak, Hirschsteak
+                usw.).[1][2] <br/>Auch quer zur Wirbelsäule geschnittene Scheiben von
+                größeren, festfleischigen Fischen wie Schwertfisch, Thunfisch, Hai oder
+                Lachs werden als Steaks bezeichnet.
             </p>
         </div>
-        <button onclick="slideOut()" id="reservationShowMoreText">Show more</button>
     </div>
-    <div id="pictureRestaurantReservation">
-        <div id="divPicReservation">
-            <img id="reservationsPicRestaurant" src="../ressources/restaurant.png" height="200" width="350" />
-            <h2 id="textToPicReservation">Was können sie bei uns erwarten?</h2>
-        </div>
-    </div>
-    <div id="containerReservationText">
-        <div id="orangeBlockReservationText">
-            <div id="orangeReservationBlockContent">
-                <h3>Unser wundervolles Steak</h3>
+</div>
+<div id="layoutReservation">
+    <div id="containerInfoForReservation">
+        <div id="infoForReservation">
+            <h2>Reservieren</h2>
+            <p>
+                Gern könnt ihr Kontakt über vollgendes Formular aufnehmen. Denkt an
+                eine freundliche Anschrift wie <u>Hallo</u> oder <u>Hi</u>.
+                <br/><br/>
+                Gebt einfach eure Daten ein damit wir sie verkaufen könne an Google,
+                Meta und co.
+            </p>
+            <br/>
+            <br/>
+            <div style="display: grid">
                 <p>
-                    Hier folgt ein Text über Steak von Wikipedia. <br />
-                    Ein Steak (englisch steak [steik], aus altnordisch steik, „Braten“, zu
-                    steikja „am Spieß braten“; vgl. neuisländisch steik „Steak“ oder
-                    „Braten“; steikja, „braten“) ist eine zum Kurzbraten oder Grillen
-                    geeignete Rindfleischscheibe. Steaks, die von anderen Tier- und
-                    Fleischarten stammen, tragen einen entsprechenden Hinweis in ihrer
-                    Bezeichnung (z. B. Kalbssteak, Schweinesteak, Putensteak, Hirschsteak
-                    usw.).[1][2] <br />Auch quer zur Wirbelsäule geschnittene Scheiben von
-                    größeren, festfleischigen Fischen wie Schwertfisch, Thunfisch, Hai oder
-                    Lachs werden als Steaks bezeichnet.
+                    <br/>
+                    <br/>
+                    <label for="Vorname"
+                    >Vorname: <input type="text" id="vorname" name="Vorname"
+                    /></label>
+                    <label for="Nachname"
+                    >Nachname: <input type="text" id="nachname" name="Nachname"
+                    /></label>
+                    <br/>
+                    <br/>
+                    <label>
+                        Wann wollen sie essen gehen?
+                        <input type="date" id="eatdat"/>
+                    </label>
+                    <br/>
+                    <br/>
+                    <label>
+                        Für wie viele Menschen wollen sie reservieren?
+                        <input type="search" id="countPeople" list="Anzahl Personen"/>
+                        <datalist id="Anzahl Personen">
+                            <option value="1"></option>
+                            <option value="2"></option>
+                            <option value="3"></option>
+                            <option value="4"></option>
+                            <option value="5"></option>
+                            <option value="6"></option>
+                            <option value="7"></option>
+                            <option value="8"></option>
+                            <option value="9"></option>
+                            <option value="10"></option>
+                        </datalist>
+                    </label>
+
+                    <br/>
+                    <br/>
+                    <button id="reservationButton">Senden</button>
                 </p>
             </div>
         </div>
     </div>
-    <div id="layoutReservation">
-        <div id="containerInfoForReservation">
-            <div id="infoForReservation">
-                <h2>Reservieren</h2>
-                <p>
-                    Gern könnt ihr Kontakt über vollgendes Formular aufnehmen. Denkt an
-                    eine freundliche Anschrift wie <u>Hallo</u> oder <u>Hi</u>.
-                    <br /><br />
-                    Gebt einfach eure Daten ein damit wir sie verkaufen könne an Google,
-                    Meta und co.
-                </p>
-                <br />
-                <br />
-                <div style="display: grid">
-                    <p>
-                        <br />
-                        <br />
-                        <label for="Vorname"
-                        >Vorname: <input type="text" id="vorname" name="Vorname"
-                        /></label>
-                        <label for="Nachname"
-                        >Nachname: <input type="text" id="nachname" name="Nachname"
-                        /></label>
-                        <br />
-                        <br />
-                        <label>
-                            Wann wollen sie essen gehen?
-                            <input type="date"  id="eatdat" />
-                        </label>
-                        <br />
-                        <br />
-                        <label>
-                            Für wie viele Menschen wollen sie reservieren?
-                            <input type="search" id="countPeople" list="Anzahl Personen" />
-                            <datalist id="Anzahl Personen">
-                                <option value="1"></option>
-                                <option value="2"></option>
-                                <option value="3"></option>
-                                <option value="4"></option>
-                                <option value="5"></option>
-                                <option value="6"></option>
-                                <option value="7"></option>
-                                <option value="8"></option>
-                                <option value="9"></option>
-                                <option value="10"></option>
-                            </datalist>
-                        </label>
-
-                        <br />
-                        <br />
-                        <button id="reservationButton">Senden</button>
-                    </p>
-                </div>
-            </div>
+    <div id="containerAlreadyReservation">
+        <div id="alreadyReservation" style="display: flex; flex-direction: column">
+            <table id="reservationTable" border="1">
+                <tr>
+                    <th>Termin</th>
+                    <th>Name</th>
+                    <th>Anzahl</th>
+                </tr>
+                <tr>
+                    <td>2023-02-09</td>
+                    <td>Luis Winter</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>2023-05-01</td>
+                    <td>Genoveva Bergmann</td>
+                    <td>2</td>
+                </tr>
+            </table>
+            <br/>
+            <br/>
+            Wir freuen uns auf Sie!
         </div>
-        <div id="containerAlreadyReservation">
-            <div id="alreadyReservation" style="display: flex; flex-direction: column">
-                <table id="reservationTable" border="1">
-                    <tr>
-                        <th>Termin</th>
-                        <th>Name</th>
-                        <th>Anzahl</th>
-                    </tr>
-                    <tr>
-                        <td>2023-02-09</td>
-                        <td>Luis Winter</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>2023-05-01</td>
-                        <td>Genoveva Bergmann</td>
-                        <td>2</td>
-                    </tr>
-                </table>
-                <br />
-                <br />
-                Wir freuen uns auf Sie!
-            </div>
-            <script>
-                var reservationButton = document.getElementById("reservationButton")
+        <script>
+            var reservationButton = document.getElementById("reservationButton")
 
-                reservationButton.addEventListener("click", function () {
-                    var table = document.getElementById("reservationTable")
+            reservationButton.addEventListener("click", function () {
+                var table = document.getElementById("reservationTable")
 
-                    let date = document.getElementById("eatdat").value
-                    let name = document.getElementById("vorname").value + " " + document.getElementById("nachname").value
-                    let peopleCount = document.getElementById("countPeople").value
+                let date = document.getElementById("eatdat").value
+                let name = document.getElementById("vorname").value + " " + document.getElementById("nachname").value
+                let peopleCount = document.getElementById("countPeople").value
 
-                    fetch('http://localhost:8000/postReservation', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ date: date, name: name, count: peopleCount })
+                fetch('http://localhost:8000/postReservation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({date: date, name: name, count: peopleCount})
+                })
+                    .then(response => response.json())
+                    .then(data => (console.log(data)))
+                    .catch(error => console.error(error));
+
+                fetch('http://localhost:8000/getReservations', {
+                    method: 'GET',
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok')
+                        }
+                        return response.json()
                     })
-                        .then(response => response.json())
-                        .then(data => (console.log(data)))
-                        .catch(error => console.error(error));
-
-                    fetch('http://localhost:8000/getReservations', {
-                        method: 'GET',
-                    })
-                        .then(response => {
-                            if (!response.ok) {
-                                throw new Error('Network response was not ok')
-                            }
-                            return response.json()
-                        })
-                        .then(data => {
+                    .then(data => {
                             // clear the existing rows from the table
                             table.innerHTML = ''
                             // loop over the reservations and add a new row for each reservation
@@ -195,47 +194,46 @@
                                 cell1.innerHTML = reservation.date
                                 cell2.innerHTML = reservation.name
                                 cell3.innerHTML = reservation.count
-                                })
-                            }
-                        )
-                    })
-            </script>
-        </div>
+                            })
+                        }
+                    )
+            })
+        </script>
     </div>
-    <div id="reservationFooter">
-        <div>
-            <h2>Adresse</h2>
-            <p><b>Name:</b> Hibiscus <br>
-                <b>Straße:</b> Eisenzahnstraße 90 <br>
-                <b>Postleitzahl:</b> 12589, Berlin <br>
-                <b>E-Mail:</b> info@restaurant-hibiscus.de <br>
-                <b>Tel.:</b> (+49) 163 5556416
-            </p>
-        </div>
-        <div>
-            <h2>Folge Uns</h2>
-            <p>Wir sind zu finden auf Facebook und Instagram</p>
-        </div>
+</div>
+<div id="reservationFooter">
+    <div>
+        <h2>Adresse</h2>
+        <p><b>Name:</b> Hibiscus <br>
+            <b>Straße:</b> Eisenzahnstraße 90 <br>
+            <b>Postleitzahl:</b> 12589, Berlin <br>
+            <b>E-Mail:</b> info@restaurant-hibiscus.de <br>
+            <b>Tel.:</b> (+49) 163 5556416
+        </p>
     </div>
-    <script>
-        const countCookie = getCookie('reservations')
-        if(!countCookie) {
-            document.cookie = ('reservations='+ 1+"; path=/");
-            console.log("new counter")
-        }else {
-            document.cookie = ('reservations='+ (Number(countCookie)+1)+"; path=/");
-        }
+    <div>
+        <h2>Folge Uns</h2>
+        <p>Wir sind zu finden auf Facebook und Instagram</p>
+    </div>
+</div>
+<script>
+    const countCookie = getCookie('reservations')
+    if (!countCookie) {
+        document.cookie = ('reservations=' + 1 + "; path=/");
+    } else {
+        document.cookie = ('reservations=' + (Number(countCookie) + 1) + "; path=/");
+    }
 
-        function getCookie(name) {
-            const cookies = document.cookie.split(';');
-            for (const cookie of cookies) {
-                const [cookieName, cookieValue] = cookie.split('=');
-                if (cookieName.trim() === name) {
-                    return cookieValue.trim();
-                }
+    function getCookie(name) {
+        const cookies = document.cookie.split(';');
+        for (const cookie of cookies) {
+            const [cookieName, cookieValue] = cookie.split('=');
+            if (cookieName.trim() === name) {
+                return cookieValue.trim();
             }
-            return null;
         }
-    </script>
+        return null;
+    }
+</script>
 </body>
 </html>

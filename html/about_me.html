@@ -140,10 +140,10 @@
 <script>
     const countCookie = getCookie('about')
     if(!countCookie) {
-        document.cookie = ('about='+ 1);
+        document.cookie = ('about='+ 1+"; path=/");
         console.log("new counter")
     }else {
-        document.cookie = ('about='+ (Number(countCookie)+1));
+        document.cookie = ('about='+ (Number(countCookie)+1)+"; path=/");
     }
 
     function getCookie(name) {

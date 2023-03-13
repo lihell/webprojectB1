@@ -79,9 +79,6 @@
                 <div id="boxMostVisited">
                     <h2>Meist besuchte Seiten</h2>
                     <ol id="listOfMostVisited">
-                        <li>Menu</li>
-                        <li>About Me</li>
-                        <li>Reservation</li>
                     </ol>
                 </div>
             </div>
@@ -426,6 +423,43 @@
                     }
                 )
         })
+        console.log(getCookie("about"))
+        let pageVisits = {0: 0, 1: 0, 2: 0};
+        if ((getCookie("menu"))){
+            pageVisits[0] = Number(getCookie("menu"));
+        }
+        if ((getCookie("about"))){
+            pageVisits[1] = Number(getCookie("about"));
+        }
+        if ((getCookie("reservations"))){
+            pageVisits[2] = Number(getCookie("reservations"));
+        }
+        let sortedPages = Object.keys(pageVisits).sort((a, b) => pageVisits[b] - pageVisits[a]);
+
+        let myList = document.getElementById("listOfMostVisited");
+        for (let obj of sortedPages) {
+            let li = document.createElement("li");
+            let a = document.createElement("a");
+            switch (Number(obj)){
+                case 0:
+                    a.href = "./html/menu.html";
+                    a.textContent = "Menü";
+                    break;
+                case 1:
+                    a.href = "./html/about_me.html";
+
+                    a.textContent = "About Me";
+                    break;
+                case 2:
+                    a.href = "./html/reservations.html";
+                    a.textContent = "Reservationen";
+                    break;
+                default:
+                    a.textContent = "Fehlerrr"
+            }
+            li.appendChild(a);
+            myList.appendChild(li);
+        }
     </script>
     <div id="footer">
         <div>

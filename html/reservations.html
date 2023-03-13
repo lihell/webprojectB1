@@ -220,10 +220,10 @@
     <script>
         const countCookie = getCookie('reservations')
         if(!countCookie) {
-            document.cookie = ('reservations='+ 1);
+            document.cookie = ('reservations='+ 1+"; path=/");
             console.log("new counter")
         }else {
-            document.cookie = ('reservations='+ (Number(countCookie)+1));
+            document.cookie = ('reservations='+ (Number(countCookie)+1)+"; path=/");
         }
 
         function getCookie(name) {

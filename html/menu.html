@@ -518,10 +518,11 @@
 
     const countCookie = getCookie('menu')
     if(!countCookie) {
-        document.cookie = ('menu=' + 1);
+        document.cookie = ('menu=' + 1+"; path=/");
+
         console.log("new counter")
     }else {
-        document.cookie = ('menu='+ (Number(countCookie)+1));
+        document.cookie = ('menu='+ (Number(countCookie)+1)+"; path=/");
     }
 
     function getCookie(name) {

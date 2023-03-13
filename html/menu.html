@@ -53,7 +53,7 @@
                                 <tr>
                                     <td>Alfreds Futterkiste</td>
                                     <td>10,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img data-fave="notFave" class="star" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav6" data-fave="notFave" class="star" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <script>
                                     function getCookie(cookieName) {
@@ -64,55 +64,31 @@
                                         })
                                         return cookie[cookieName];
                                     }
-                                    function showFavourite(event) {
-                                        const button = event.target;
-                                        console.log(button.dataset.fave);
-
-                                        if (button.dataset.fave === "notFave") {
-                                            button.dataset.fave = "isFave"
-                                            button.src = "../ressources/faveStar.png"
-                                        } else {
-                                            button.src = "../ressources/notFaveStar.png"
-                                            button.dataset.fave = "notFave"
-                                        }
-                                        let tmp = getCookie("userId");
-                                        fetch('http://localhost:8080/fav', {
-                                            method: 'POST',
-                                            headers: {
-                                                'Content-Type': 'application/json'
-                                            },
-                                            body: JSON.stringify({ userID: tmp,button: button, isFavNow: !(button.dataset.fave === "notFave") })
-                                        })
-                                            .then(response => response.json())
-                                            .then(data => console.log(data))
-                                            .catch(error => console.error(error));
-
-                                    }
                                 </script>
                                 <tr>
                                     <td>Centro comercial Moctezuma</td>
                                     <td>12,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav1" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Ernst Handel</td>
                                     <td>12,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav2" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Island Trading</td>
                                     <td>18,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav3" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Laughing Bacchus Winecellars</td>
                                     <td>15,60</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav4" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Magazzini Alimentari Riuniti</td>
                                     <td>11,90</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav5" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -151,6 +127,7 @@
                                 })
                             }
                         )
+
                     function getCookie(cookieName) {
                         let cookie = {};
                         document.cookie.split(';').forEach(function(el) {
@@ -220,32 +197,32 @@
                                 <tr >
                                     <td>Kartoffel Spinat Maultaschen</td>
                                     <td>26,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav7" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>Steinbutt-Rücken im Stück gekocht</td>
                                     <td>12,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav8" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>Krosse Vierländer Ente</td>
                                     <td>11,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav9" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>Island Trading</td>
                                     <td>22,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav10" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr>
                                     <td>Knödel mit Quark aus der Wilstermarsch</td>
                                     <td>11,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav11" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>Tristan Languste</td>
                                     <td>11,00</td>
-                                    <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                    <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav12" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                                 </tr>
                                 <tr >
                                     <td>
@@ -359,22 +336,22 @@
                             <tr >
                                 <td>Schokoladen-Malheur</td>
                                 <td>13,00</td>
-                                <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav13" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                             </tr>
                             <tr>
                                 <td>Knödel mit Quark aus der Wilstermarsch</td>
                                 <td>10,00</td>
-                                <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav14" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                             </tr>
                             <tr>
                                 <td>Gries-Flammerie</td>
                                 <td>11,00</td>
-                                <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav15" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                             </tr>
                             <tr >
                                 <td>Apfel-Tarte</td>
                                 <td>9,00</td>
-                                <td><button onclick="showFavourite(event)" class="faveButton"><img class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
+                                <td><button onclick="showFavourite(event)" class="faveButton"><img id="fav16" class="star" data-fave="notFave" height="25px" width="25px" src="../ressources/notFaveStar.png"/></button></td>
                             </tr>
                             <tr >
                                 <td>
@@ -482,5 +459,62 @@
                 <p>Wir sind zu finden auf Facebook und Instagram</p>
             </div>
         </div>
+<script>
+    let tmp = getCookie("userId");
+    function showFavourite(event) {
+        const button = event.target;
+        console.log(button.dataset.fave);
+        console.log(button.id);
+        if (button.dataset.fave === "notFave") {
+            button.dataset.fave = "isFave"
+            button.src = "../ressources/faveStar.png"
+        } else {
+            button.src = "../ressources/notFaveStar.png"
+            button.dataset.fave = "notFave"
+        }
+        fetch('http://localhost:8000/fav', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userID: tmp,buttonID: button.id, isFavNow: !(button.dataset.fave === "notFave") })
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+
+    }
+
+    fetch('http://localhost:8000/getFav', {
+        method: 'GET',
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok')
+            }
+            return response.json()
+        })
+        .then(data => {
+                console.log("Hallloo hieeeer----------------------------" + data)
+            //document.getElementById("fav1").dataset.fave = data
+                data.forEach(object => {
+                    console.log("Hier:" + tmp)
+                    console.log("===" + object.userID)
+                    const button = document.getElementById(object.buttonID);
+                    if (tmp === object.userID){
+
+                        if (object.isFavNow) {
+                            button.dataset.fave = "isFave"
+                            button.src = "../ressources/faveStar.png"
+                        } else {
+                            button.src = "../ressources/notFaveStar.png"
+                            button.dataset.fave = "notFave"
+                        }
+                        console.log("Hier: " + object.buttonID)
+                    }
+                })
+            }
+        )
+</script>
     </body>
 </html>

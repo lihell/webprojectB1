@@ -63,14 +63,54 @@ app.get("/getCommentsNachspeise", (req, res) => {
     });
 })
 
+app.get("/getFav", (req, res) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header("Access-Control-Allow-Headers", "*");
+    fs.readFile(__dirname + '/ressources/favorites.json', (err, favData) => {
+        const jsonFav = JSON.parse(favData)
+        console.log("Mein Get request made")
+        console.log(jsonFav)
+        res.send(jsonFav)
+    });
+})
+
 app.post("/fav", (req, res) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header("Access-Control-Allow-Headers", "*");
     const data = req.body;
     console.log(data);
-    fs.writeFile(__dirname + "/ressources/favorites.json", JSON.stringify(data), (err) => {
+    fs.readFile(__dirname + "/ressources/favorites.json", (err, fileData) => {
         if (err) throw err;
-        console.log('Data written to file');
+        let existing = false;
+        // Parse the JSON data into a JavaScript object
+        const existingData = JSON.parse(fileData);
+
+        console.log("Hier sind meine LOGS!!!!!!!" + data.userID)
+
+        console.log(req.body)
+
+        existingData.forEach(object => {
+            if (object.userID === data.userID && object.buttonID === data.buttonID){
+                object.isFavNow = !(object.isFavNow)
+                existing = true;
+            }
+            console.log(object.userID + "    " + object.buttonID)
+        })
+        // Merge the existing data with the new data received in the request
+        let newData
+        if (!existing){
+            newData = [...existingData, req.body];
+        } else {
+            newData = existingData;
+        }
+        existing = false;
+        //console.log(newData)
+
+        // Write the updated data back to the file
+        fs.writeFile(__dirname + "/ressources/favorites.json", JSON.stringify(newData), (err) => {
+            if (err) throw err;
+            console.log('Data written to file');
+        });
     });
 });
 

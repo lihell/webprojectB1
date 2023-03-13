@@ -515,6 +515,26 @@
                 })
             }
         )
+
+    const countCookie = getCookie('menu')
+    if(!countCookie) {
+        document.cookie = ('menu=' + 1);
+        console.log("new counter")
+    }else {
+        document.cookie = ('menu='+ (Number(countCookie)+1));
+    }
+
+    function getCookie(name) {
+        const cookies = document.cookie.split(';');
+        for (const cookie of cookies) {
+            const [cookieName, cookieValue] = cookie.split('=');
+            if (cookieName.trim() === name) {
+                return cookieValue.trim();
+            }
+        }
+        return null;
+    }
+
 </script>
     </body>
 </html>

@@ -198,28 +198,37 @@
                     },
                     body: JSON.stringify({userID: tmpVorspeise, comment: commentBoxValue})
                 })
-                    .then(response => response.json())
-                    .then(data => (console.log(data)))
-                    .catch(error => console.error(error));
-
-                fetch('http://localhost:8000/getCommentsVorspeise', {
-                    method: 'GET',
-                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok')
                         }
-                        return response.json()
+                        console.log(response)
+                        return response.json();
                     })
+                    .catch(error => console.error(error))
                     .then(data => {
-                            data.forEach(comment => {
-                                var li = document.createElement("li");
-                                var text = document.createTextNode(comment.comment);
-                                li.appendChild(text);
-                                document.getElementById("vorspeiseCommentList").appendChild(li);
+                        console.log(data)
+                        fetch('http://localhost:8000/getCommentsVorspeise', {
+                            method: 'GET',
+                        })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok')
+                                }
+                                return response.json()
                             })
-                        }
-                    )
+                            .then(data => {
+                                    data.forEach(comment => {
+                                        var li = document.createElement("li");
+                                        var text = document.createTextNode(comment.comment);
+                                        li.appendChild(text);
+                                        document.getElementById("vorspeiseCommentList").appendChild(li);
+                                    })
+                                }
+                            )
+                    })
+                    .catch(error => console.error(error));
+
             })
         </script>
     </div>
@@ -378,28 +387,36 @@
                     },
                     body: JSON.stringify({userID: tmpHaupt, comment: commentBoxValue})
                 })
-                    .then(response => response.json())
-                    .then(data => (console.log(data)))
-                    .catch(error => console.error(error));
-
-                fetch('http://localhost:8000/getCommentsHauptspeise', {
-                    method: 'GET',
-                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok')
                         }
-                        return response.json()
+                        console.log(response)
+                        return response.json();
                     })
+                    .catch(error => console.error(error))
                     .then(data => {
-                            data.forEach(comment => {
-                                var li = document.createElement("li");
-                                var text = document.createTextNode(comment.comment);
-                                li.appendChild(text);
-                                document.getElementById("hauptspeiseCommentList").appendChild(li);
+                        console.log(data)
+                        fetch('http://localhost:8000/getCommentsHauptspeise', {
+                            method: 'GET',
+                        })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok')
+                                }
+                                return response.json()
                             })
-                        }
-                    )
+                            .then(data => {
+                                    data.forEach(comment => {
+                                        var li = document.createElement("li");
+                                        var text = document.createTextNode(comment.comment);
+                                        li.appendChild(text);
+                                        document.getElementById("hauptspeiseCommentList").appendChild(li);
+                                    })
+                                }
+                            )
+                    })
+                    .catch(error => console.error(error));
             })
         </script>
     </div>
@@ -529,28 +546,37 @@
                     },
                     body: JSON.stringify({userID: tmpNach, comment: commentBoxValue})
                 })
-                    .then(response => response.json())
-                    .then(data => (console.log(data)))
-                    .catch(error => console.error(error));
-
-                fetch('http://localhost:8000/getCommentsNachspeise', {
-                    method: 'GET',
-                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok')
                         }
-                        return response.json()
+                        console.log(response)
+                        return response.json();
                     })
+                    .catch(error => console.error(error))
                     .then(data => {
-                            data.forEach(comment => {
-                                var li = document.createElement("li");
-                                var text = document.createTextNode(comment.comment);
-                                li.appendChild(text);
-                                document.getElementById("nachspeiseCommentList").appendChild(li);
+                        console.log(data)
+                        fetch('http://localhost:8000/getCommentsNachspeise', {
+                            method: 'GET',
+                        })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok')
+                                }
+                                return response.json()
                             })
-                        }
-                    )
+                            .then(data => {
+                                    data.forEach(comment => {
+                                        var li = document.createElement("li");
+                                        var text = document.createTextNode(comment.comment);
+                                        li.appendChild(text);
+                                        document.getElementById("nachspeiseCommentList").appendChild(li);
+                                    })
+                                }
+                            )
+                            .catch(error => console.error(error));
+                    })
+                    .catch(error => console.error(error));
             })
         </script>
     </div>

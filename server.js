@@ -113,6 +113,7 @@ app.post("/postCommentsMain", (req, res) => {
         fs.writeFile(__dirname + "/ressources/commentsMain.json", JSON.stringify(newData), (err) => {
             if (err) throw err;
             console.log('Data written to file');
+            res.status(200).send('Comment posted successfully');
         });
     });
 });
@@ -134,6 +135,7 @@ app.post("/postCommentsVorspeise", (req, res) => {
         fs.writeFile(__dirname + "/ressources/commentsVorspeise.json", JSON.stringify(newData), (err) => {
             if (err) throw err;
             console.log('Data written to file');
+            res.status(200).send('Comment posted successfully');
         });
     });
 });
@@ -156,6 +158,7 @@ app.post("/postCommentsHauptspeise", (req, res) => {
         fs.writeFile(__dirname + "/ressources/commentsHauptspeise.json", JSON.stringify(newData), (err) => {
             if (err) throw err;
             console.log('Data written to file');
+            res.status(200).send('Comment posted successfully');
         });
     });
 });
@@ -178,6 +181,7 @@ app.post("/postCommentsNachspeise", (req, res) => {
         fs.writeFile(__dirname + "/ressources/commentsNachspeise.json", JSON.stringify(newData), (err) => {
             if (err) throw err;
             console.log('Data written to file');
+            res.status(200).send('Comment posted successfully');
         });
     });
 });
@@ -208,6 +212,7 @@ app.post("/postReservation", (req, res) => {
         fs.writeFile(__dirname + "/ressources/reservations.json", JSON.stringify(newData), (err) => {
             if (err) throw err;
             console.log('Data written to file');
+            res.status(200).send('Comment posted successfully');
         });
     })
 })

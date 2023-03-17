@@ -42,7 +42,7 @@ body {
 #aboutMeShowMoreText {
   height: 25%;
   position: relative;
-  width: 3%;
+  width: 50px;
   margin-left: 2%;
   background-color: #efa561;
   border-radius: 15px;
@@ -179,7 +179,7 @@ body {
 #boxPics {
   background-size: cover;
   overflow: hidden;
-  width: 950px;
+  width: 700px;
   height: 40%;
 }
 

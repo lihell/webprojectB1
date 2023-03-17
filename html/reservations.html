@@ -153,10 +153,35 @@
             Wir freuen uns auf Sie!
         </div>
         <script>
+            var table = document.getElementById("reservationTable")
+            fetch('http://localhost:8000/getReservations', {
+                method: 'GET',
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok')
+                    }
+                    return response.json()
+                })
+                .then(data => {
+                        // clear the existing rows from the table
+                        table.innerHTML = ''
+                        // loop over the reservations and add a new row for each reservation
+                        data.forEach(reservation => {
+                            row = table.insertRow()
+                            cell1 = row.insertCell(0)
+                            cell2 = row.insertCell(1)
+                            cell3 = row.insertCell(2)
+                            cell1.innerHTML = reservation.date
+                            cell2.innerHTML = reservation.name
+                            cell3.innerHTML = reservation.count
+                        })
+                    }
+                )
+
             var reservationButton = document.getElementById("reservationButton")
 
             reservationButton.addEventListener("click", function () {
-                var table = document.getElementById("reservationTable")
 
                 let date = document.getElementById("eatdat").value
                 let name = document.getElementById("vorname").value + " " + document.getElementById("nachname").value
@@ -169,34 +194,42 @@
                     },
                     body: JSON.stringify({date: date, name: name, count: peopleCount})
                 })
-                    .then(response => response.json())
-                    .then(data => (console.log(data)))
-                    .catch(error => console.error(error));
-
-                fetch('http://localhost:8000/getReservations', {
-                    method: 'GET',
-                })
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Network response was not ok')
                         }
-                        return response.json()
+                        console.log(response)
+                        return response.json();
                     })
+                    .catch(error => console.error(error))
                     .then(data => {
-                            // clear the existing rows from the table
-                            table.innerHTML = ''
-                            // loop over the reservations and add a new row for each reservation
-                            data.forEach(reservation => {
-                                row = table.insertRow()
-                                cell1 = row.insertCell(0)
-                                cell2 = row.insertCell(1)
-                                cell3 = row.insertCell(2)
-                                cell1.innerHTML = reservation.date
-                                cell2.innerHTML = reservation.name
-                                cell3.innerHTML = reservation.count
+                        console.log(data)
+                        fetch('http://localhost:8000/getReservations', {
+                            method: 'GET',
+                        })
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Network response was not ok')
+                                }
+                                return response.json()
                             })
-                        }
-                    )
+                            .then(data => {
+                                    // clear the existing rows from the table
+                                    table.innerHTML = ''
+                                    // loop over the reservations and add a new row for each reservation
+                                    data.forEach(reservation => {
+                                        row = table.insertRow()
+                                        cell1 = row.insertCell(0)
+                                        cell2 = row.insertCell(1)
+                                        cell3 = row.insertCell(2)
+                                        cell1.innerHTML = reservation.date
+                                        cell2.innerHTML = reservation.name
+                                        cell3.innerHTML = reservation.count
+                                    })
+                                }
+                            )
+                    })
+                    .catch(error => console.error(error));
             })
         </script>
     </div>

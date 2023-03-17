@@ -140,7 +140,7 @@ body {
 #reservationShowMoreText {
   height: 25%;
   position: relative;
-  width: 3%;
+  width: 50px;
   margin-left: 2%;
   background-color: #efa561;
   border-radius: 15px;

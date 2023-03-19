@@ -10,3 +10,7 @@ Project for Course "Webprogrammierung"
   - To start the Page -> take the full Path of the index.html and put it into a Browser
 - the Webpages are connected to the Homepage via Hyperlinks
 - Zip Ordner entpacken
+- zwei Konsolen öffnen
+- 1) node server.js
+- 2) node index.js
+- Frontend  läuft auf dem Port von der index.js 
